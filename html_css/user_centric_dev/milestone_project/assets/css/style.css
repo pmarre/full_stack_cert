@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton|Roboto:100,200,300,400,500,600,700|Rokkitt:100,200,300,400,500,600,700&display=swap');
+
+/* ------------------------------------------------------------------- General Styling */
+
+.bg-color-navbar {
+  background-color: #ea8641;
+  padding: 5px;
+}
+
+/* ------------------------------------------------------------------- General Styling */
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+#nav {
+  margin: 0;
+}
+
+.active {
+  border-bottom: 2px solid #000;
+}
+
+/* ------------------------------------------------------------------- Header */
+
+.navbar-container {
+  min-height: 60px;
+}
+
+.logo {
+  margin-left: 10px;
+}
+
+.menu-item .nav-link {
+  text-align: center;
+  letter-spacing: 2px;
+  color: #000;
+}
+
+/* ------------------------------------------------------------------- Footer */
+
+footer {
+  background-color: #525255;
+  min-height: 120px;
+}
+
+/* ------------------------------------------------------------------- Hero Section */
+
+.hero-image-container {
+  position: relative;
+  height: 70vh;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.overlay-hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  /* Photo by Vishnu R Nair on Unsplash */
+  background-image: url('/Users/patrickmarre/Desktop/ngo/full_stack_cert/html_css/user_centric_dev/milestone_project/assets/images/hero_img.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.heading-container {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.heading {
+  font-family: 'Monoton', sans-serif;
+  font-size: 4rem;
+  color: #fafafa;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.band-member-heading {
+  width: 100%;
+}
