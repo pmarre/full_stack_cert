@@ -1,13 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Monoton|Roboto:100,200,300,400,500,600,700|Rokkitt:100,200,300,400,500,600,700&display=swap');
 
 /* ------------------------------------------------------------------- General Styling */
+* {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
 
 .bg-color-navbar {
   background-color: #ea8641;
   padding: 5px;
 }
 
+.btn {
+  width: 150px;
+  height: 50px;
+  border-radius: 0;
+  border: none;
+  font-weight: 100;
+}
+
 /* ------------------------------------------------------------------- General Styling */
+
+.uppercase {
+  text-transform: uppercase;
+}
 
 .uppercase {
   text-transform: uppercase;
@@ -28,7 +44,11 @@
 }
 
 .logo {
-  margin-left: 10px;
+  margin-left: 20px;
+  color: #000;
+  font-family: 'Rokkitt', serif;
+  font-weight: 700;
+  font-size: 2rem;
 }
 
 .menu-item .nav-link {
@@ -42,8 +62,42 @@
 footer {
   background-color: #525255;
   min-height: 120px;
+  padding: 30px;
 }
 
+.footer-heading {
+  text-align: center;
+  font-family: 'Rokkitt', serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+footer p {
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+footer h4,
+footer p,
+footer button,
+footer i {
+  color: #fafafa;
+  font-weight: 100;
+}
+
+footer i {
+  font-size: 1.25rem;
+  margin: 10px;
+}
+
+.footer-item {
+  margin: 20px 0;
+}
+
+.footer-content {
+  margin: 0 auto;
+  max-width: 1200px;
+}
 /* ------------------------------------------------------------------- Hero Section */
 
 .hero-image-container {
@@ -90,6 +144,44 @@ footer {
   letter-spacing: 2px;
 }
 
-.band-member-heading {
+/* ------------------------------------------------------------------- Band Member Section */
+
+.band-members {
+  margin-bottom: 60px;
+  max-width: 1200px;
+}
+
+.band-member-title {
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-family: 'Rokkitt', sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 3rem;
+}
+
+.card {
+  margin: 10px auto;
+}
+
+.band-member-heading {
+  font-family: 'Rokkitt', serif;
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.instrument {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+/* ------------------------------------------------------------------- Media Queries */
+
+@media (max-width: 776px) {
+  .list-inline-item:not(:last-child) {
+    margin-right: 0;
+  }
 }
