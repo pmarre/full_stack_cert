@@ -32,15 +32,15 @@
             <div class="col">
               <ul id="nav" class="list-inline">
                 <li class="col-sm-3 list-inline-item menu-item">
-                  <a class="nav-link uppercase active" href="index.html"
-                    >Home</a
-                  >
+                  <a class="nav-link uppercase" href="index.html">Home</a>
                 </li>
                 <li class="col-sm-3 list-inline-item menu-item">
                   <a class="nav-link uppercase" href="#">Tour Dates</a>
                 </li>
                 <li class="col-sm-3 list-inline-item menu-item">
-                  <a class="nav-link uppercase" href="contact.html">Contact</a>
+                  <a class="nav-link uppercase active" href="contact.html"
+                    >Contact</a
+                  >
                 </li>
               </ul>
             </div>
@@ -48,88 +48,45 @@
         </div>
       </div>
     </header>
-    <!--------------------------------------------------------------------------- Hero Section  -->
-    <section class="container-fluid hero">
-      <div class="row">
-        <div class="col hero-image-container">
-          <div class="overlay-hero-img"></div>
-          <div class="hero-image">
-            <div class="row">
-              <div class="col-12 col-md-6 heading-container text-center">
-                <h1 class="heading uppercase">Band Name</h1>
-                <button class="btn btn-success hvr-sweep-to-bottom uppercase">
-                  Tour Dates
-                </button>
-                <button class="btn btn-warning hvr-sweep-to-bottom uppercase">
-                  Book Us
-                </button>
-              </div>
-            </div>
-          </div>
+    <section class="contact-section container-fluid">
+      <div class="row align-items-center">
+        <div class="col-sm-6 d-none d-sm-block contact-img text-center">
+          <img src="assets/images/guitars.jpg" alt="singer" />
         </div>
-      </div>
-    </section>
-    <!--------------------------------------------------------------------------- End Hero Section  -->
-
-    <!--------------------------------------------------------------------------- Band Member Section  -->
-    <section class="container-fluid band-members">
-      <div class="row">
-        <div class="col-12 band-member-heading-container">
-          <h2 class="uppercase band-member-title text-center">Band Members</h2>
-        </div>
-        <div class="col-12 text-center">
-          <div class="row">
-            <div class="col-12 col-sm-6 col-md-4">
-              <h3 class="uppercase band-member-heading">Jordan Pipes</h3>
-              <small class="instrument">Lead Singer</small>
-              <div class="card" style="width: 18rem;">
-                <img
-                  src="assets/images/singer.jpg"
-                  class="card-img-top"
-                  alt="Photo of Singer by Kamil Feczko on Unsplash"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+        <div class="col-sm-6 contact-form-container">
+          <div class="form-center">
+            <h3 class="form-heading">Want to book us for a show?</h3>
+            <h5 class="form-small text-center">Let's make it happen!</h5>
+            <form class="contact-form">
+              <input
+                type="text"
+                name="fullName"
+                class="form-control"
+                placeholder="Full Name"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="Email Address"
+                required
+              />
+              <textarea
+                rows="5"
+                name="comments"
+                class="form-control"
+                placeholder="Comments..."
+                required
+              ></textarea>
+              <div class="form-row text-center">
+                <div class="col">
+                  <button type="submit" class="btn btn-success hvr-grow-shadow">
+                    Book Us Now!
+                  </button>
                 </div>
               </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-              <h3 class="uppercase band-member-heading">Sean Sticks</h3>
-              <small class="instrument">Drummer</small>
-              <div class="card" style="width: 18rem;">
-                <img
-                  src="assets/images/drummer.jpg"
-                  class="card-img-top"
-                  alt="Photo of Drummer by Emery Meyer on Unsplash"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-              <h3 class="uppercase band-member-heading">John Strummer</h3>
-              <small class="instrument">Lead Guitarist</small>
-              <div class="card" style="width: 18rem;">
-                <img
-                  src="assets/images/guitarist.jpg"
-                  class="card-img-top"
-                  alt="Photo of Guitarist by The Nigmatic on Unsplash"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
