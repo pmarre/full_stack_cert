@@ -234,7 +234,7 @@ footer i {
 /* ------------------------------------------------------------------- Tour Section */
 
 .tour-section {
-  width: 70%;
+  width: 50%;
   margin-top: 60px;
 }
 
@@ -276,6 +276,10 @@ footer i {
   cursor: pointer;
 }
 
+.tour-date-list:hover .d-sm-none {
+  display: block !important;
+}
+
 /* ------------------------------------------------------------------- Media Queries */
 
 @media (max-width: 776px) {
@@ -285,5 +289,17 @@ footer i {
 
   .form-center {
     max-width: 80%;
+  }
+
+  .tour-section {
+    width: 90%;
+  }
+
+  .tour-dates-social {
+    display: none;
+  }
+
+  .tour-title {
+    padding: 0;
   }
 }
