@@ -34,7 +34,7 @@
 }
 
 .active {
-  border-bottom: 2px solid #000;
+  color: #000;
 }
 
 /* ------------------------------------------------------------------- Header */
@@ -65,7 +65,16 @@
 
 .menu-item .nav-link:hover {
   color: #fff;
-  border-bottom: 2px solid #fff;
+}
+
+.nav-container {
+  position: relative;
+}
+
+.navbar-brand {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 /* ------------------------------------------------------------------- Footer */
@@ -280,6 +289,21 @@ footer i {
   display: block !important;
 }
 
+.btn-buy-tickets {
+  line-height: 44px;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-buy-tickets:hover {
+  color: coral;
+  text-decoration: none;
+}
+
+.ticket-icon {
+  font-size: 1rem;
+}
+
 /* ------------------------------------------------------------------- Media Queries */
 
 @media (max-width: 776px) {
@@ -301,5 +325,10 @@ footer i {
 
   .tour-title {
     padding: 0;
+  }
+
+  .btn-buy-tickets {
+    width: 100%;
+    border: none;
   }
 }
