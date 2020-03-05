@@ -6,6 +6,12 @@
   font-weight: 300;
 }
 
+html,
+body,
+header {
+  background-color: #f4f4f4;
+}
+
 .bg-color-navbar {
   background-color: #ea8641;
   padding: 5px;
@@ -40,31 +46,39 @@
 /* ------------------------------------------------------------------- Header */
 
 .navbar-container {
-  min-height: 60px;
+  min-height: 80px;
+  background-color: #373737;
+  margin: 0;
 }
 
 .logo {
   margin-left: 20px;
-  color: #000;
+  color: #c0b283;
   font-family: 'Rokkitt', serif;
-  font-weight: 700;
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 4rem;
+  letter-spacing: 5px;
+}
+
+.logo-container {
+  padding: 40px;
 }
 
 .logo:hover {
   text-decoration: none;
-  color: #000;
+  cursor: pointer;
 }
 
-.menu-item .nav-link {
+.nav-link {
   text-align: center;
   letter-spacing: 2px;
-  color: #000;
+  color: #dcd0c0;
   transition: all 0.2s ease-in-out;
+  margin: 0 10px;
 }
 
-.menu-item .nav-link:hover {
-  color: #fff;
+.nav-link:hover {
+  color: #c0b283;
 }
 
 /* .nav-container {
@@ -77,10 +91,24 @@
   top: 10px;
 } */
 
+.social-links-menu {
+  margin: 0;
+}
+
+.social-links-menu li a i {
+  color: #dcd0c0;
+  margin: 0 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-links-menu li a i:hover {
+  color: #c0b283;
+}
+
 /* ------------------------------------------------------------------- Footer */
 
 footer {
-  background-color: #525255;
+  background-color: #373737;
   min-height: 120px;
   padding: 30px;
 }
@@ -101,7 +129,7 @@ footer h4,
 footer p,
 footer button,
 footer i {
-  color: #fafafa;
+  color: #dcd0c0;
   font-weight: 100;
 }
 
@@ -243,13 +271,14 @@ footer i {
 /* ------------------------------------------------------------------- Tour Section */
 
 .tour-section {
-  width: 50%;
+  width: 70%;
   margin-top: 60px;
 }
 
 .tour-heading {
   font-family: 'Rokkitt', serif;
   font-weight: 100;
+  color: #c0b283;
 }
 
 .tour-date-list {
@@ -260,6 +289,7 @@ footer i {
   font-family: 'Rokkitt', serif;
   font-weight: 100;
   margin: 0;
+  color: #373737;
 }
 
 .location {
@@ -274,14 +304,20 @@ footer i {
   font-size: 1rem;
 }
 
+.location {
+  margin-bottom: 0;
+}
+
 .concert-date,
 .location {
-  color: #a3b5bf;
+  color: #c0b283;
+  letter-spacing: 1px;
+  transition: all 0.2s ease-in-out;
 }
 
 .tour-date-list:hover .concert-date,
 .tour-date-list:hover .location {
-  color: #000;
+  color: #373737;
   cursor: pointer;
 }
 
@@ -291,12 +327,12 @@ footer i {
 
 .btn-buy-tickets {
   line-height: 44px;
-  color: #000;
+  color: #c0b283;
   transition: all 0.2s ease-in-out;
 }
 
 .btn-buy-tickets:hover {
-  color: coral;
+  color: #373737;
   text-decoration: none;
 }
 
@@ -304,9 +340,27 @@ footer i {
   font-size: 1rem;
 }
 
+.tour-dates-social .social-links li a i {
+  color: #c0b283;
+  transition: all 0.5s ease-in-out;
+}
+
+.tour-dates-social .social-links li a i:hover {
+  color: #373737;
+}
+
 /* ------------------------------------------------------------------- Media Queries */
 
 @media (max-width: 776px) {
+  .logo-container {
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .logo-container h1 {
+    font-size: 3rem;
+  }
+
   .list-inline-item:not(:last-child) {
     margin-right: 0;
   }
