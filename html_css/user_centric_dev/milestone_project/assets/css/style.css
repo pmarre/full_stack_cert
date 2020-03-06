@@ -25,6 +25,16 @@ header {
   font-weight: 100;
 }
 
+.btn-tour {
+  background-color: #373737;
+  color: #dcd0c0;
+}
+
+.hvr-sweep-to-bottom:before {
+  background-color: #dcd0c0;
+  color: #373737;
+}
+
 /* ------------------------------------------------------------------- General Styling */
 
 .uppercase {
@@ -49,19 +59,20 @@ header {
   min-height: 80px;
   background-color: #373737;
   margin: 0;
+  border-top: 2px solid #dcd0c0;
 }
 
 .logo {
-  margin-left: 20px;
-  color: #c0b283;
+  color: #dcd0c0;
   font-family: 'Rokkitt', serif;
-  font-weight: 300;
+  font-weight: 700;
   font-size: 4rem;
-  letter-spacing: 5px;
+  letter-spacing: -0.025rem;
 }
 
 .logo-container {
-  padding: 40px;
+  padding: 40px 40px 10px;
+  background-color: #373737;
 }
 
 .logo:hover {
@@ -81,15 +92,10 @@ header {
   color: #c0b283;
 }
 
-/* .nav-container {
-  position: relative;
+.hvr-underline-from-center:before {
+  background: #c0b283;
+  height: 2px;
 }
-
-.navbar-brand {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-} */
 
 .social-links-menu {
   margin: 0;
@@ -117,7 +123,7 @@ footer {
   text-align: center;
   font-family: 'Rokkitt', serif;
   font-weight: 100;
-  letter-spacing: 1px;
+  letter-spacing: -0.025rem;
 }
 
 footer p {
@@ -159,7 +165,7 @@ footer i {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 1));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgb(244, 244, 244, 1));
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -184,12 +190,12 @@ footer i {
   width: 100%;
 }
 
-.heading {
-  font-family: 'Monoton', sans-serif;
-  font-size: 4rem;
-  color: #fafafa;
+.hero-heading {
+  font-family: 'Rokkitt', serif;
+  font-size: 3rem;
+  color: #373737;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: -0.025rem;
 }
 
 /* ------------------------------------------------------------------- Band Member Section */
@@ -205,18 +211,19 @@ footer i {
   margin-bottom: 30px;
   font-family: 'Rokkitt', sans-serif;
   font-weight: 300;
-  letter-spacing: 2px;
+  letter-spacing: -0.025rem;
   font-size: 3rem;
 }
 
 .card {
   margin: 10px auto;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .band-member-heading {
   font-family: 'Rokkitt', serif;
   font-weight: 100;
-  letter-spacing: 2px;
+  letter-spacing: -0.025rem;
   margin-top: 10px;
   margin-bottom: 0;
 }
@@ -247,7 +254,7 @@ footer i {
 .form-heading {
   font-family: 'Rokkitt', serif;
   font-weight: 100;
-  letter-spacing: 2px;
+  letter-spacing: -0.025rem;
   text-align: center;
 }
 
@@ -277,7 +284,7 @@ footer i {
 
 .tour-heading {
   font-family: 'Rokkitt', serif;
-  font-weight: 100;
+  font-weight: 300;
   color: #c0b283;
 }
 
@@ -384,5 +391,19 @@ footer i {
   .btn-buy-tickets {
     width: 100%;
     border: none;
+  }
+
+  .mobile-menu {
+    margin: 0 auto;
+  }
+
+  .fa-bars {
+    font-size: 1.5rem;
+    color: #dcd0c0;
+  }
+
+  .fa-bars:hover,
+  .fa-bars:active {
+    color: #c0b283;
   }
 }
