@@ -6,6 +6,30 @@
   font-weight: 300;
 }
 
+h1 {
+  font-size: 3.052em;
+}
+
+h2 {
+  font-size: 2.441em;
+}
+
+h3 {
+  font-size: 1.953em;
+}
+
+h4 {
+  font-size: 1.563em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
 html,
 body,
 header {
@@ -73,6 +97,8 @@ header {
 .logo-container {
   padding: 40px 40px 10px;
   background-color: #373737;
+  width: 100%;
+  margin: 0;
 }
 
 .logo:hover {
@@ -142,6 +168,12 @@ footer i {
 footer i {
   font-size: 1.25rem;
   margin: 10px;
+  color: #dcd0c0;
+  transition: all 0.2s ease-in-out;
+}
+
+.footer i:hover {
+  color: #c0b283;
 }
 
 .footer-item {
@@ -192,7 +224,6 @@ footer i {
 
 .hero-heading {
   font-family: 'Rokkitt', serif;
-  font-size: 3rem;
   color: #373737;
   text-align: center;
   letter-spacing: -0.025rem;
@@ -212,7 +243,6 @@ footer i {
   font-family: 'Rokkitt', sans-serif;
   font-weight: 300;
   letter-spacing: -0.025rem;
-  font-size: 3rem;
 }
 
 .card {
@@ -231,6 +261,27 @@ footer i {
 .instrument {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+}
+
+/* ------------------------------------------------------------------- Merchandise */
+
+.merchandise-container {
+  width: 100%;
+  background-color: #dcd0c0;
+  padding: 100px 40px;
+}
+
+.merch-heading {
+  font: 'Rokkitt', serif;
+  font-weight: 100;
+  padding-bottom: 40px;
+}
+
+.merch-item {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  background-color: #373737;
 }
 
 /* ------------------------------------------------------------------- Contact */
@@ -292,7 +343,7 @@ footer i {
   margin-bottom: 20px;
 }
 
-.tour-date-list h4 {
+.tour-date-list h5 {
   font-family: 'Rokkitt', serif;
   font-weight: 100;
   margin: 0;
@@ -365,7 +416,6 @@ footer i {
   }
 
   .logo-container h1 {
-    font-size: 3rem;
   }
 
   .list-inline-item:not(:last-child) {
