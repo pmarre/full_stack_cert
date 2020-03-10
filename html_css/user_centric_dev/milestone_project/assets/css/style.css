@@ -46,16 +46,46 @@ header {
   height: 50px;
   border-radius: 0;
   border: none;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .btn-tour {
   background-color: #373737;
-  color: #dcd0c0;
+  color: #c0b283;
 }
 
-.hvr-sweep-to-bottom:before {
+.btn-tour.hvr-sweep-to-bottom:before {
+  background-color: #c0b283;
+  color: #373737;
+}
+
+.btn-tour.hvr-sweep-to-bottom:hover {
+  color: #373737;
+}
+
+.btn-booking {
+  background-color: #c0b283;
+  color: #373737;
+}
+
+.btn-booking.hvr-sweep-to-bottom:before {
+  background-color: #373737;
+}
+
+.btn-booking.hvr-sweep-to-bottom:hover {
+  color: #c0b283;
+}
+
+.btn-tour-footer {
   background-color: #dcd0c0;
+  color: #373737;
+}
+
+.btn-tour-footer.hvr-sweep-to-bottom:before {
+  background-color: #c0b283;
+}
+
+.btn-tour-footer.hvr-sweep-to-bottom:hover {
   color: #373737;
 }
 
@@ -127,13 +157,15 @@ header {
   margin: 0;
 }
 
-.social-links-menu li a i {
+.social-links-menu li a i,
+.social-links li a i {
   color: #dcd0c0;
   margin: 0 5px;
   transition: all 0.2s ease-in-out;
 }
 
-.social-links-menu li a i:hover {
+.social-links-menu li a i:hover,
+.social-links li a i:hover {
   color: #c0b283;
 }
 
@@ -227,6 +259,7 @@ footer i {
   color: #373737;
   text-align: center;
   letter-spacing: -0.025rem;
+  font-size: 5rem;
 }
 
 /* ------------------------------------------------------------------- Band Member Section */
@@ -243,6 +276,7 @@ footer i {
   font-family: 'Rokkitt', sans-serif;
   font-weight: 300;
   letter-spacing: -0.025rem;
+  color: #c0b283;
 }
 
 .card {
@@ -256,32 +290,12 @@ footer i {
   letter-spacing: -0.025rem;
   margin-top: 10px;
   margin-bottom: 0;
+  color: #c0b283;
 }
 
 .instrument {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-}
-
-/* ------------------------------------------------------------------- Merchandise */
-
-.merchandise-container {
-  width: 100%;
-  background-color: #dcd0c0;
-  padding: 100px 40px;
-}
-
-.merch-heading {
-  font: 'Rokkitt', serif;
-  font-weight: 100;
-  padding-bottom: 40px;
-}
-
-.merch-item {
-  width: 100%;
-  max-width: 200px;
-  height: 200px;
-  background-color: #373737;
 }
 
 /* ------------------------------------------------------------------- Contact */
@@ -331,6 +345,7 @@ footer i {
 .tour-section {
   width: 70%;
   margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .tour-heading {
