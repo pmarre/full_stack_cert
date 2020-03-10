@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!---------------------------------------------------------------------------------- Bootstrap  -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!---------------------------------------------------------------------------------- Hover.css  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Band Name</title>
+  </head>
+  <body>
+    <header class="container-fluid p-0">
+      <div class="row logo-container">
+        <div class="col-12 col-sm-12">
+          <h1 class="text-center uppercase logo">Band Name</h1>
+        </div>
+      </div>
+      <div class="row w-100 navbar-container">
+        <div class="col-3 align-self-center text-right">
+          <div class="d-none d-sm-inline-block">
+            <ul class="list-inline social-links social-links-menu">
+              <li class="list-inline-item">
+                <a target="_blank" href="#"
+                  ><i class="fab fa-facebook-f" aria-hidden="true"></i
+                  ><span class="sr-only">Facebook</span></a
+                >
+              </li>
+              <li class="list-inline-item">
+                <a target="_blank" href="#"
+                  ><i class="fab fa-twitter" aria-hidden="true"></i
+                  ><span class="sr-only">Twitter</span></a
+                >
+              </li>
+              <li class="list-inline-item">
+                <a target="_blank" href="#"
+                  ><i class="fab fa-spotify" aria-hidden="true"></i
+                  ><span class="sr-only">Spotify</span></a
+                >
+              </li>
+              <li class="list-inline-item">
+                <a target="_blank" href="#"
+                  ><i class="fab fa-soundcloud" aria-hidden="true"></i
+                  ><span class="sr-only">Soundcloud</span></a
+                >
+              </li>
+              <li class="list-inline-item">
+                <a target="_blank" href="#"
+                  ><i class="fab fa-instagram" aria-hidden="true"></i
+                  ><span class="sr-only">Instagram</span></a
+                >
+              </li>
+              <li class="list-inline-item">
+                <a target="_blank" href="#"
+                  ><i class="fab fa-youtube" aria-hidden="true"></i
+                  ><span class="sr-only">Youtube</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 align-self-center">
+          <nav class="navbar navbar-expand-lg nav-container">
+            <button
+              class="navbar-toggler mobile-menu"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class=""><i class="fas fa-bars"></i></span>
+            </button>
+            <div
+              class="collapse navbar-collapse justify-content-center"
+              id="navbarNavAltMarkup"
+            >
+              <div class="navbar-nav">
+                <a
+                  class="nav-item nav-link uppercase active hvr-underline-from-center"
+                  href="index.html"
+                  >Home</a
+                >
+                <a
+                  class="nav-item nav-link uppercase hvr-underline-from-center"
+                  href="tour-dates.html"
+                  >Tour Dates</a
+                >
+                <a
+                  class="nav-item nav-link uppercase hvr-underline-from-center"
+                  href="contact.html"
+                  >Contact</a
+                >
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </header>
+    <!--------------------------------------------------------------------------- Hero Section  -->
+    <section class="container-fluid hero">
+      <div class="row">
+        <div class="col hero-image-container">
+          <div class="overlay-hero-img"></div>
+          <div class="hero-image">
+            <div class="row">
+              <div class="col-12 col-md-6 heading-container text-center">
+                <h1 class="hero-heading uppercase">On Tour Now</h1>
+                <button class="btn hvr-sweep-to-bottom uppercase btn-tour">
+                  Tour Dates
+                </button>
+                <button class="btn hvr-sweep-to-bottom uppercase btn-booking">
+                  Book Us
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--------------------------------------------------------------------------- End Hero Section  -->
+
+    <!--------------------------------------------------------------------------- Band Member Section  -->
+    <section class="container-fluid band-members">
+      <div class="row">
+        <div class="col-12 band-member-heading-container">
+          <h2 class="uppercase band-member-title text-center">Band Members</h2>
+        </div>
+        <div class="col-12 text-center">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-4">
+              <h3 class="uppercase band-member-heading">Jordan Pipes</h3>
+              <small class="instrument">Lead Singer</small>
+              <div class="card" style="width: 18rem;">
+                <img
+                  src="assets/images/singer.jpg"
+                  class="card-img-top"
+                  alt="Photo of Singer by Kamil Feczko on Unsplash"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <h3 class="uppercase band-member-heading">Sean Sticks</h3>
+              <small class="instrument">Drummer</small>
+              <div class="card" style="width: 18rem;">
+                <img
+                  src="assets/images/drummer.jpg"
+                  class="card-img-top"
+                  alt="Photo of Drummer by Emery Meyer on Unsplash"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <h3 class="uppercase band-member-heading">John Strummer</h3>
+              <small class="instrument">Lead Guitarist</small>
+              <div class="card" style="width: 18rem;">
+                <img
+                  src="assets/images/guitarist.jpg"
+                  class="card-img-top"
+                  alt="Photo of Guitarist by The Nigmatic on Unsplash"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!---------------------------------------------------------------------------------- Footer -->
+    <footer class="container-fluid">
+      <div class="row footer-content">
+        <div class="col-12 col-md-4 footer-about footer-item">
+          <h4 class="footer-heading">About Us</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Non
+            sodales neque sodales ut etiam sit amet nisl purus. Massa id neque
+            aliquam vestibulum morbi blandit.
+          </p>
+        </div>
+        <div class="col-12 col-md-4 footer-tour footer-item text-center">
+          <h4 class="footer-heading text-center">Tour Dates</h4>
+          <button class="btn btn-tour-footer hvr-sweep-to-bottom">
+            Tour Dates
+          </button>
+        </div>
+        <div class="col-12 col-md-4 footer-social text-center footer-item">
+          <h4 class="footer-heading">Social</h4>
+          <ul class="list-inline social-links">
+            <li class="list-inline-item">
+              <a target="_blank" href="#"
+                ><i class="fab fa-facebook-f" aria-hidden="true"></i
+                ><span class="sr-only">Facebook</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="#"
+                ><i class="fab fa-twitter" aria-hidden="true"></i
+                ><span class="sr-only">Twitter</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="#"
+                ><i class="fab fa-spotify" aria-hidden="true"></i
+                ><span class="sr-only">Spotify</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="#"
+                ><i class="fab fa-soundcloud" aria-hidden="true"></i
+                ><span class="sr-only">Soundcloud</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="#"
+                ><i class="fab fa-instagram" aria-hidden="true"></i
+                ><span class="sr-only">Instagram</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="#"
+                ><i class="fab fa-youtube" aria-hidden="true"></i
+                ><span class="sr-only">Youtube</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!---------------------------------------------------------------------------------- Bootstrap  -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <!---------------------------------------------------------------------------------- Font Awesome  -->
+    <script
+      src="https://kit.fontawesome.com/cced6347e4.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
