@@ -1,0 +1,41 @@
+# Fundamentals of Javascript
+
+
+ INTRODUCTION
+==============
+
+How do we add Javascript to a webpage?
+    * a browser also contains a Javascript interpreter
+        - must specifically tell the browser when Javascript is included
+            - use the <script> tag
+    
+Javascript allows us to directly interact with the Document Object Model (DOM)
+    * HTML document is loaded into a web browser    
+        - becomes a document object in Javascript
+        - document object is the root node in the DOM
+
+Javascript uses dot notation
+
+Example:
+
+document.write("<p>JS will interpret this</p>");
+    * left of dot represents document
+    * everything after the dot represents a function
+
+Console: place where browswer outputs errors and information about page that is loading
+
+Example:
+ console.log("Hello, World!"); // Hello, World! prints inside the console
+
+* use console.log() to debug and test code 
+
+
+ VARIABLES
+===========
+
+variable is a way to reference something
+
+Examples:
+    var groceryList = ["milk", "bread", "cookies"];
+    var pi = 3.1415926535;
+

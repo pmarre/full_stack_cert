@@ -1,0 +1,71 @@
+# STRATEGY PLAN
+
+## Who is my target audience? 
+    Businesses OR Consumer? 
+
+
+## B2C => Questions 
+    What makes a good ___ experience?
+    Where do you go first on a website? 
+    How often do you use application for?
+
+Emotional Triggers:
+    - Feeling product gives the consumer
+
+    - B2C much more impulsive 
+    - B2B lots of research 
+
+Pricing: 
+    - B2C: Very transparent, very impulsive
+    - B2B: Less transparent with lots of costs not available online, lots of decision makers
+
+Content: 
+    - B2C: Large images, minimal Content   
+        - 3 step rule of thumb for purchases 
+    - B2B: Content should have lots of CTAs, lots of information on compatability, white papers, blogs, testimonials, etc...
+
+Research: 
+    - What is worth doing? 
+    - Will it add value? 
+    - What problem is being solved? 
+
+Value:
+    - Find demographic and find compelling experiences 
+
+
+## Scope 
+
+What do people actually need? 
+    - explore the suggestion to uncover the real problem 
+
+"People don't want to buy a quarter-inch drill, they want a quarter-inch hole" - Theodore something
+
+Content 
+- Mixed content works together to fulfill a requirement
+
+Requirements are needs, not features
+
+Requirements Types
+Useful: Is it useful?
+Sellable: Can it be sold?
+Buildable: Can I build it?
+Objective: What does the user want to accomplish?
+Functional: What does the user need to reach their objective
+Non-Functional:
+Business Rules:
+
+User Story:
+    How users interact with your product 
+
+
+## Structure 
+    The way the content is presented 
+    Interaction Design (IXD)
+    Information acrchitecture (IA)
+
+## Skeleton 
+    * Giving form to function
+    * Only break from convention if you can improve it
+    * Metaphors: 
+        - Visual metaphors: Images to represent information 
+                
