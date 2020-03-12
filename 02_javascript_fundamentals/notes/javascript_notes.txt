@@ -39,3 +39,9 @@ Examples:
     var groceryList = ["milk", "bread", "cookies"];
     var pi = 3.1415926535;
 
+Ways to declare a variable:
+    * var
+    * let
+    * const
+
+Expression => produces or results in some value
