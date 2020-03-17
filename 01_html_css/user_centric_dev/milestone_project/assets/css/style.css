@@ -6,6 +6,12 @@
   font-weight: 300;
 }
 
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
 h1 {
   font-size: 3.052em;
 }
@@ -281,7 +287,12 @@ footer i {
 
 .card {
   margin: 10px auto;
-  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  background-color: #f4f4f4;
+}
+
+.card-text {
+  color: #373737;
 }
 
 .band-member-heading {
@@ -296,6 +307,53 @@ footer i {
 .instrument {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+}
+
+/* ------------------------------------------------------------------- Merchandise Section */
+.merchandise-section {
+  width: 100%;
+  padding: 100px 60px;
+  background-color: #dcd0c0;
+}
+
+.merch-container {
+  width: 80%;
+  height: 100%;
+  max-width: 1600px;
+  margin: 10px auto;
+}
+
+.merch-heading {
+  font-family: 'Rokkitt', serif;
+  font-weight: 100;
+  letter-spacing: -0.025rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #373737;
+}
+
+.merch-item {
+  width: 100%;
+  padding-bottom: 100%;
+  background-color: #ea8641;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+}
+
+.merch-buy-now-link {
+  color: #f4f4f4;
+  opacity: 0.8;
+  font-family: 'Rokkitt', serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 10px 0 15px;
+  transition: all 0.2s ease-in-out;
+}
+
+.merch-buy-now-link:hover,
+.merch-buy-now-link:active {
+  color: #373737;
 }
 
 /* ------------------------------------------------------------------- Contact */
@@ -466,5 +524,19 @@ footer i {
   .fa-bars:hover,
   .fa-bars:active {
     color: #c0b283;
+  }
+
+  /* ------------------------------------------------------------------- Merchandise Section */
+  .merchandise-section {
+    padding: 50px 20px;
+  }
+
+  .merch-container {
+    width: 90%;
+    height: 100%;
+  }
+
+  .merch-item {
+    margin: 10px 0;
   }
 }
