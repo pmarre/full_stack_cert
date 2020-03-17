@@ -239,7 +239,7 @@ footer i {
   width: 100%;
   height: 100%;
   /* Photo by Vishnu R Nair on Unsplash */
-  background-image: url('/Users/patrickmarre/Desktop/ngo/full_stack_cert/html_css/user_centric_dev/milestone_project/assets/images/hero_img.jpg');
+  background-image: url('../images/hero_img.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

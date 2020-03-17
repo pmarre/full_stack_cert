@@ -45,3 +45,20 @@ Ways to declare a variable:
     * const
 
 Expression => produces or results in some value
+
+
+parseInt() converts string to integer
+parseFloat() converts string to float 
+toString() converts number to string
+toFixed(n) converts number to string but only keeping n decimals
+isFinite(n) checks if n is actual number
+isInteger(n) checks if n is an integer
+isNaN(n) checis if n is NaN 
+
+Methods for Math object:
+Math.floor rounds number down
+Math.ceil rounds number up
+Math.round rounds to the nearest integer
+Math.trunc removes the decimal part of the number
+Math.sqrt returns the squareroot of the number
+Math.cbrt returns the cube root of the number

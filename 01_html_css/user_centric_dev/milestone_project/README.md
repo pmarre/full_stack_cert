@@ -2,10 +2,10 @@
 
 ### Table of Contents
 
-1. [User Stories]()
-2. [Technologies Used]()
-3. [Site Purpose]()
-4. [Testing]()
+1. [User Stories](https://github.com/pmarre/full_stack_cert/tree/master/01_html_css/user_centric_dev/milestone_project#user-stories)
+2. [Technologies Used](https://github.com/pmarre/full_stack_cert/tree/master/01_html_css/user_centric_dev/milestone_project#technologies-used)
+3. [Site Purpose](https://github.com/pmarre/full_stack_cert/tree/master/01_html_css/user_centric_dev/milestone_project#site-purpose)
+4. [Testing](https://github.com/pmarre/full_stack_cert/tree/master/01_html_css/user_centric_dev/milestone_project#testing)
 
 ## User Stories
 
