@@ -262,6 +262,10 @@ footer i {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  padding: 50px 30px;
+  background-color: #dcd0c0;
+  box-shadow: 2px 2px 15px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
 }
 
 .hero-heading {
@@ -367,25 +371,37 @@ footer i {
 }
 
 .form-container {
+  width: 80%;
+  margin: 60px auto;
   height: 70vh;
+  box-shadow: -4px 0 15px 10px rgba(0, 0, 0, 0.3);
+  min-height: 550px;
 }
 
-.contact-img img {
-  height: 70vh;
-  margin: 0 auto;
-  box-sizing: border-box;
-  border: 15px solid #f4f4f4;
+.form-header {
+  background-color: #dcd0c0;
+  padding: 30px 20px 10px;
+  margin-bottom: 20px;
+}
+
+.img-container {
+  background-image: url('../images/guitars.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .form-center {
-  max-width: 60%;
+  max-width: 80%;
   margin: 40px auto;
 }
 
 .contact-form-container {
   height: 100%;
-  background-color: #dcd0c0;
-  box-shadow: -4px 0 10px 0 rgba(0, 0, 0, 0.3);
+  background-color: #f4f4f4;
+  padding: 0;
 }
 
 .form-heading {
@@ -406,9 +422,21 @@ footer i {
 .contact-form input,
 .contact-form textarea {
   margin-bottom: 20px;
-  background-color: rgba(212, 212, 212, 0.4);
-  box-shadow: inset 4px -3px 2px 0 rgba(0, 0, 0, 0.3);
   border: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+.btn-booking-form {
+  background-color: #dcd0c0;
+}
+
+.btn-booking-form.hvr-sweep-to-bottom:before {
+  background-color: #373737;
+}
+
+.btn-booking-form.hvr-sweep-to-bottom:hover {
+  color: #dcd0c0;
 }
 
 /* ------------------------------------------------------------------- Tour Section */
@@ -551,5 +579,10 @@ footer i {
 
   .merch-item {
     margin: 10px 0;
+  }
+
+  .form-container {
+    width: 90%;
+    height: 85vh;
   }
 }
