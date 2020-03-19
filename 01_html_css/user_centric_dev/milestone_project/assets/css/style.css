@@ -36,6 +36,10 @@ h6 {
   font-size: 1em;
 }
 
+header {
+  z-index: 1000;
+}
+
 html,
 body,
 header {
@@ -358,9 +362,19 @@ footer i {
 
 /* ------------------------------------------------------------------- Contact */
 
+.contact-section {
+  max-width: 1600px;
+}
+
+.form-container {
+  height: 70vh;
+}
+
 .contact-img img {
-  width: 70%;
-  margin: 40px auto;
+  height: 70vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border: 15px solid #f4f4f4;
 }
 
 .form-center {
@@ -369,9 +383,9 @@ footer i {
 }
 
 .contact-form-container {
-  border-left: 2px solid;
-  border-image-source: linear-gradient(#000, transparent);
-  border-image-slice: 1;
+  height: 100%;
+  background-color: #dcd0c0;
+  box-shadow: -4px 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 .form-heading {
@@ -392,10 +406,9 @@ footer i {
 .contact-form input,
 .contact-form textarea {
   margin-bottom: 20px;
-}
-
-.contact-section {
-  max-width: 1800px;
+  background-color: rgba(212, 212, 212, 0.4);
+  box-shadow: inset 4px -3px 2px 0 rgba(0, 0, 0, 0.3);
+  border: none;
 }
 
 /* ------------------------------------------------------------------- Tour Section */
