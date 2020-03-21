@@ -53,4 +53,4 @@ Band Website can be accessed here: [Live Site](https://pmarre.github.io/full_sta
 
 #### CSS Validation:
 
-- Completed using [W3c - HTML Validation Service](https://jigsaw.w3.org/css-validator/)
+- Completed using [W3C - HTML Validation Service](https://jigsaw.w3.org/css-validator/)
