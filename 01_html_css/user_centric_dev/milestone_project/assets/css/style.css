@@ -99,12 +99,6 @@ header {
   color: #373737;
 }
 
-/* ------------------------------------------------------------------- General Styling */
-
-.uppercase {
-  text-transform: uppercase;
-}
-
 .uppercase {
   text-transform: uppercase;
 }
@@ -117,6 +111,12 @@ header {
   color: #000;
 }
 
+.card,
+.card-img,
+.card-img-top {
+  border-radius: 0;
+}
+
 /* ------------------------------------------------------------------- Header */
 
 .navbar-container {
@@ -126,7 +126,7 @@ header {
   border-top: 2px solid #dcd0c0;
 }
 
-.logo {
+.logo a {
   color: #dcd0c0;
   font-family: 'Rokkitt', serif;
   font-weight: 700;
@@ -197,6 +197,7 @@ footer {
 footer p {
   text-align: center;
   font-size: 0.85rem;
+  letter-spacing: 1px;
 }
 
 footer h4,
@@ -288,7 +289,7 @@ footer i {
   margin-top: 20px;
   margin-bottom: 30px;
   font-family: 'Rokkitt', sans-serif;
-  font-weight: 300;
+  font-weight: 100;
   letter-spacing: -0.025rem;
   color: #c0b283;
 }
@@ -343,13 +344,23 @@ footer i {
 .merch-item {
   width: 100%;
   padding-bottom: 100%;
-  background-color: #ea8641;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
   border-radius: 0.25rem;
 }
 
+.cd-image {
+  background-image: url('../images/cd.jpg');
+}
+
+.vinyl-image {
+  background-image: url('../images/vinyl.jpg');
+}
+
 .merch-buy-now-link {
-  color: #f4f4f4;
+  color: #373737;
   opacity: 0.8;
   font-family: 'Rokkitt', serif;
   font-weight: 300;
@@ -361,6 +372,7 @@ footer i {
 
 .merch-buy-now-link:hover,
 .merch-buy-now-link:active {
+  font-weight: 700;
   color: #373737;
 }
 
@@ -465,7 +477,7 @@ footer i {
 .location {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   margin: 0;
 }
 
@@ -473,10 +485,6 @@ footer i {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 1rem;
-}
-
-.location {
-  margin-bottom: 0;
 }
 
 .concert-date,
@@ -489,7 +497,6 @@ footer i {
 .tour-date-list:hover .concert-date,
 .tour-date-list:hover .location {
   color: #373737;
-  cursor: pointer;
 }
 
 .tour-date-list:hover .d-sm-none {
