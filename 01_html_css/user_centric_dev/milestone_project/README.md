@@ -4,10 +4,11 @@ Band Website can be accessed here: [Live Site](https://pmarre.github.io/full_sta
 
 ### Table of Contents
 
-1. [User Stories](https://github.com/pmarre/full_stack_cert/tree/master/01_html_css/user_centric_dev/milestone_project#user-stories)
-2. [Technologies Used](https://github.com/pmarre/full_stack_cert/tree/master/01_html_css/user_centric_dev/milestone_project#technologies-used)
-3. [Site Purpose](https://github.com/pmarre/full_stack_cert/tree/master/01_html_css/user_centric_dev/milestone_project#site-purpose)
-4. [Testing](https://github.com/pmarre/full_stack_cert/tree/master/01_html_css/user_centric_dev/milestone_project#testing)
+1. [UX](https://github.com/pmarre/full_stack_cert/tree/master/01_html_css/user_centric_dev/milestone_project#ux)
+2. [Wireframes](https://github.com/pmarre/full_stack_cert/tree/master/01_html_css/user_centric_dev/milestone_project#wireframes)
+3. [User Stories](https://github.com/pmarre/full_stack_cert/tree/master/01_html_css/user_centric_dev/milestone_project#user-stories)
+4. [Technologies Used](https://github.com/pmarre/full_stack_cert/tree/master/01_html_css/user_centric_dev/milestone_project#technologies-used)
+5. [Testing](https://github.com/pmarre/full_stack_cert/tree/master/01_html_css/user_centric_dev/milestone_project#testing)
 
 ## UX
 
@@ -37,6 +38,7 @@ Band Website can be accessed here: [Live Site](https://pmarre.github.io/full_sta
 - Hover.css
 - Git
 - Github
+- Basalmiq
 
 ## Testing
 
