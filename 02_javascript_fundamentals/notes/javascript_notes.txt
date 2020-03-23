@@ -40,9 +40,11 @@ Examples:
     var pi = 3.1415926535;
 
 Ways to declare a variable:
-    * var
-    * let
-    * const
+    * var - allows for hoisting and re-assigning, ie if a var is called after it is used, it will still be valid
+    * let - no hoisting or re-assigning
+    * const - cannot be reassigned ever
+
+    let & const are scoped to the block of code they are declared in, var is not
 
 Expression => produces or results in some value
 
@@ -62,3 +64,10 @@ Math.round rounds to the nearest integer
 Math.trunc removes the decimal part of the number
 Math.sqrt returns the squareroot of the number
 Math.cbrt returns the cube root of the number
+
+ CALLBACKS
+===========
+    * functions passed to another function as an argument;
+
+
+
