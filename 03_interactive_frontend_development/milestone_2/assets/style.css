@@ -1,0 +1,312 @@
+/* ---------------------------------------- Imports ------ */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=PT+Serif&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Serif', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+/* ----------------------------------------- Hero Section ----- */
+header {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: transparent;
+  z-index: 10;
+}
+
+#hero-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: skewY(-12deg);
+  transform-origin: 0;
+  background-image: linear-gradient(
+    150deg,
+    rgb(85, 51, 255) 15%,
+    rgb(5, 213, 255) 70%,
+    rgb(166, 255, 203) 94%
+  );
+}
+
+.hero-heading {
+  font-size: 4rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.025rem;
+}
+
+.hero-subheading {
+  font-size: 1.5rem;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.search-container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.search-bar {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.search-bar:focus {
+  outline: none;
+  transform: scale(1.1);
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  flex: 1;
+  margin: 10px auto;
+  width: 150px;
+  padding: 15px 0;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.025rem;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-random-recipe {
+  background-color: #fff;
+  color: #000;
+  order: 3;
+}
+
+.btn-search-recipe {
+  background-color: rgb(166, 255, 203);
+  color: #000;
+  margin-top: 20px;
+}
+
+/* ---------------------------------------- Top Recipes Section ------- */
+.top-recipes-container {
+  width: 80%;
+  margin: 60px auto 120px;
+}
+
+.top-recipes-header {
+  font-size: 1.75rem;
+  margin: 20px auto 0;
+  text-transform: uppercase;
+  letter-spacing: 0.025rem;
+  color: #737373;
+  border-bottom: 4px solid #05d5ff;
+  width: 240px;
+  text-align: center;
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: coral;
+  margin: 0 auto;
+  background-image: url('./images/spinach-chicken-pomegranate-salad-5938.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.recipe-details {
+  padding: 10px;
+  background-color: #fff;
+  margin: -40px auto 0;
+  text-align: center;
+  box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.2);
+  width: 250px;
+  border-radius: 10px;
+}
+
+.recipe-card-heading {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #05d5ff;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+  letter-spacing: 0.025rem;
+}
+
+.recipe-card-cook-time {
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.recipe-card-description {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.recipe-card-view-recipe {
+  background-color: #a6ffcb;
+  color: #000;
+}
+
+/* ---------------------------------------- Fun Facts Section ------- */
+.trivia-container {
+  width: 100%;
+  height: 100vh;
+  background-color: gainsboro;
+  position: relative;
+  display: flex;
+}
+
+#trivia-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: gainsboro;
+  transform: skewY(-12deg);
+  transform-origin: 0;
+  z-index: 1;
+}
+
+.fun-facts {
+  z-index: 100;
+  height: 100%;
+}
+
+/* ---------------------------------------- About Section ------- */
+.about-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#about-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: skewY(-12deg);
+  transform-origin: 0;
+  z-index: 1;
+  background-color: #fff;
+}
+
+/* ---------------------------------------- Media Query ------- */
+
+@media (min-width: 768px) {
+  #hero-background {
+    transform: skewY(-6deg);
+  }
+
+  .search-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    margin: 20px 10px 0 0;
+    max-width: 150px;
+  }
+
+  /* ---------------------------------------- Top Recipes Section ------- */
+  .top-recipes-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .top-recipes-header {
+    margin: 20px 0 0;
+    text-align: left;
+    width: 100%;
+    font-size: 2.5rem;
+  }
+
+  .recipe-details {
+    width: 300px;
+  }
+
+  .recipe-card-heading {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #05d5ff;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+    letter-spacing: 0.025rem;
+    padding-top: 10px;
+  }
+
+  .recipe-card-cook-time {
+    color: gray;
+    margin-bottom: 10px;
+  }
+
+  .recipe-card-description {
+    margin-top: 10px;
+    padding: 5px;
+  }
+
+  .recipe-card-view-recipe {
+    background-color: #a6ffcb;
+    color: #000;
+    margin: 10px auto;
+  }
+
+  #trivia-background {
+    transform: skewY(-6deg);
+  }
+
+  /* ---------------------------------------- About Section ------- */
+  #about-background {
+    transform: skewY(-6deg);
+  }
+}
