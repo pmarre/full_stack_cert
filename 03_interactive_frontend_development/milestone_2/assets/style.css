@@ -23,6 +23,15 @@ a {
   display: block;
 }
 
+p {
+  line-height: 1.5;
+}
+
+.fas {
+  font-size: 2rem;
+  color: #3ab86f;
+}
+
 /* ----------------------------------------- Hero Section ----- */
 header {
   position: relative;
@@ -59,14 +68,14 @@ header {
 }
 
 .hero-heading {
-  font-size: 4rem;
+  font-size: 2rem;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.025rem;
 }
 
 .hero-subheading {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 60px;
   color: #fff;
 }
@@ -198,21 +207,23 @@ header {
 .trivia-container {
   width: 100%;
   height: 100vh;
-  background-color: gainsboro;
+  background-color: #f6f9fc;
   position: relative;
   display: flex;
 }
 
-#trivia-background {
+.trivia-container:before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: gainsboro;
+  background-color: #f6f9fc;
   transform: skewY(-12deg);
   transform-origin: 0;
-  z-index: 1;
+  z-index: -2;
+  overflow: hidden;
 }
 
 .fun-facts {
@@ -222,23 +233,69 @@ header {
 
 /* ---------------------------------------- About Section ------- */
 .about-container {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
-
-#about-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 90%;
   height: 100%;
-  transform: skewY(-12deg);
-  transform-origin: 0;
-  z-index: 1;
+  position: relative;
   background-color: #fff;
+  margin: 0 auto;
 }
 
+.about-us {
+  display: flex;
+  flex-direction: column;
+}
+
+.access-information,
+.other-information {
+  padding: 30px 20px;
+}
+
+.access-information {
+  border-bottom: 2px solid #f6f9fc;
+  margin-top: 40px;
+  padding-bottom: 60px;
+}
+
+.about-heading {
+  color: #3ab86f;
+  margin: 10px;
+  padding: 10px;
+  letter-spacing: 0.025rem;
+}
+
+.about {
+  line-height: 1.5;
+  padding: 10px;
+  margin: 10px;
+}
+
+.about-icon {
+  background-color: #a6ffcb;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  text-align: center;
+  line-height: 65px !important;
+  margin-left: 20px;
+}
+
+.about-link {
+  color: #05d5ff;
+  margin-left: 20px;
+  font-size: 1.125rem;
+  border-bottom: 2px solid #05d5ff;
+  width: 165px;
+  padding-bottom: 3px;
+}
+
+.about-link .fas {
+  color: #05d5ff;
+  font-size: 0.85rem;
+}
+
+.learn-link {
+  width: 181px;
+}
 /* ---------------------------------------- Media Query ------- */
 
 @media (min-width: 768px) {
@@ -254,6 +311,14 @@ header {
   .btn {
     margin: 20px 10px 0 0;
     max-width: 150px;
+  }
+
+  .hero-heading {
+    font-size: 4rem;
+  }
+
+  .hero-subheading {
+    font-size: 1.5rem;
   }
 
   /* ---------------------------------------- Top Recipes Section ------- */
@@ -301,12 +366,39 @@ header {
     margin: 10px auto;
   }
 
-  #trivia-background {
+  .trivia-container:before {
     transform: skewY(-6deg);
   }
 
   /* ---------------------------------------- About Section ------- */
-  #about-background {
-    transform: skewY(-6deg);
+  .about-container {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .about-us {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 2px solid #f6f9fc;
+    margin-bottom: 40px;
+  }
+
+  .access-information,
+  .other-information {
+    padding: 30px 20px;
+    flex: 1;
+  }
+
+  .access-information {
+    border-right: 2px solid #f6f9fc;
+    padding-bottom: 60px;
+    margin-top: 0;
+    margin-left: 5%;
+    border-bottom: none;
+  }
+
+  .other-information {
+    margin-right: 5%;
   }
 }
