@@ -1,4 +1,6 @@
+// APIs hidden with .gitignore in a config.js file
 const RECIPE_API = config.RECIPE_API_KEY;
+const RECIPE_ID = config.RECIPE_API_ID;
 
 $(document).ready(() => {
   $('.search-container').on('submit', e => {
@@ -22,39 +24,17 @@ $(document).ready(() => {
     //     console.log(response);
     //   }
     // });
-    fetch(
-      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?diet=v&excludeIngredients=c&query=burger`,
-      {
-        method: 'GET',
-        headers: {
-          'x-rapidapi-host':
-            'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-          'x-rapidapi-key': '8da306016emsh97b0f10686069dap133e09jsn9f796067d7ae'
-        }
-      }
-    )
-      .then(response => {
-        console.log(response);
-      })
-      .catch(err => {
-        console.log(err);
+    $.when(
+      $.getJSON(
+        `https://api.edamam.com/search?q=${searchTerm}&app_id=${RECIPE_ID}&app_key=${RECIPE_API}`
+      )
+    ).then(response => {
+      let recipes = response.hits;
+      recipes.forEach((recipe, i) => {
+        let el = `<div>${recipe.recipe.label}</div>`;
+        $('.top-recipes-container').prepend(el);
       });
+      console.log(recipes);
+    });
   });
 });
-
-fetch(
-  'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/quickAnswer?q=How%20much%20vitamin%20c%20is%20in%202%20apples%253F',
-  {
-    method: 'GET',
-    headers: {
-      'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-      'x-rapidapi-key': '8da306016emsh97b0f10686069dap133e09jsn9f796067d7ae'
-    }
-  }
-)
-  .then(response => {
-    console.log(response);
-  })
-  .catch(err => {
-    console.log(err);
-  });
