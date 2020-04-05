@@ -181,6 +181,8 @@ header {
   border-radius: 10px;
   height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .recipe-card-heading {
@@ -205,6 +207,117 @@ header {
 .recipe-card-view-recipe {
   background-color: #a6ffcb;
   color: #000;
+  max-height: 50px;
+  justify-self: bottom;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+/* ---------------------------------------- Full Recipe Cards ------- */
+
+.recipe-card-list {
+  width: 100%;
+}
+
+.recipe-inner-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.full-recipes {
+  width: 100%;
+}
+
+.full-recipe-container {
+  /* box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2); */
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  transition: all 0.8s ease-in-out;
+  border: 3px solid #f6f9fc;
+}
+
+.banner-img {
+  width: 100%;
+  height: 200px;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.full-recipe-header {
+  padding: 30px;
+}
+
+.ingredient-list,
+.instruction-list {
+  /* -moz-column-count: 3;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 20px;
+  column-count: 3;
+  column-gap: 20px; */
+
+  padding: 30px;
+}
+
+.ingredient-list h4,
+.instruction-list h4 {
+  font-size: 1.5rem;
+  color: #3ab86f;
+  letter-spacing: 0.025rem;
+}
+
+.ingredient-list li {
+  line-height: 1.5;
+  text-transform: capitalize;
+  margin: 20px 0 10px 40px;
+}
+
+.instruction-list li {
+  line-height: 1.5;
+  margin: 20px 0 10px 40px;
+}
+
+.recipe-summary a {
+  display: inline;
+  line-height: 1.5;
+}
+
+.back-btn {
+  background-color: #a6ffcb;
+  margin-bottom: 30px;
+}
+
+.full-recipe-title {
+  margin: 20px 0;
+}
+
+.full-recipe-heading {
+  color: #05d5ff;
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 0.025rem;
+}
+
+.full-recipe-title p {
+  color: #737373;
+  font-size: 0.85rem;
+}
+
+.summary-heading {
+  color: #3ab86f;
+  font-size: 1.5rem;
+  letter-spacing: 0.025rem;
+  margin-bottom: 10px;
 }
 
 /* ---------------------------------------- Fun Facts Section ------- */
