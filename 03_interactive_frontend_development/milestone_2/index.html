@@ -36,6 +36,25 @@
   </head>
   <body>
     <header>
+      <div class="nav-container">
+        <div class="nav-icon">
+          <i class="fas fa-hamburger"></i>
+          <span>MENU</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
       <div id="hero-background"></div>
       <section class="hero-container">
         <h1 class="hero-heading">Quarantini</h1>
@@ -44,8 +63,12 @@
           <input
             type="text"
             class="search-bar"
+            name="search-bar"
             placeholder="Enter recipe here..."
           />
+          <label for="search-bar" class="error-message"
+            >Please enter food!</label
+          >
           <input
             type="button"
             class="btn btn-random-recipe"
@@ -55,6 +78,7 @@
             type="submit"
             class="btn btn-search-recipe"
             value="Search Recipes"
+            id="top-recipes"
           />
         </form>
       </section>
@@ -62,45 +86,30 @@
     <section class="top-recipes-container">
       <div class="full-recipes"></div>
       <div class="recipe-card-list"></div>
-      <h2 class="top-recipes-header">Top Recipes:</h2>
-      <div class="recipe-card">
-        <div class="img"></div>
-        <div class="recipe-details">
-          <h3 class="recipe-card-heading">Recipe Title</h3>
-          <span class="recipe-card-cook-time">Cook Time: 30 minutes</span>
-          <p class="recipe-card-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Justo
-            eget magna fermentum iaculis eu non.
-          </p>
-          <a class="btn recipe-card-view-recipe" href="#">See recipe</a>
+      <h2 class="top-recipes-header">Top Stories</h2>
+      <article class="main-article">
+        <div class="border"></div>
+        <div class="article-info">
+          <h3>Finding Fresh Food</h3>
+          <small>Written by Celine Smith</small>
+          <button class="btn read-more">Read more</button>
         </div>
-      </div>
-      <div class="recipe-card">
-        <div class="img"></div>
-        <div class="recipe-details">
-          <h3 class="recipe-card-heading">Recipe Title</h3>
-          <span class="recipe-card-cook-time">Cook Time: 30 minutes</span>
-          <p class="recipe-card-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Justo
-            eget magna fermentum iaculis eu non.
-          </p>
-          <a class="btn recipe-card-view-recipe" href="#">See recipe</a>
-        </div>
-      </div>
-      <div class="recipe-card">
-        <div class="img"></div>
-        <div class="recipe-details">
-          <h3 class="recipe-card-heading">Recipe Title</h3>
-          <span class="recipe-card-cook-time">Cook Time: 30 minutes</span>
-          <p class="recipe-card-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Justo
-            eget magna fermentum iaculis eu non.
-          </p>
-          <a class="btn recipe-card-view-recipe" href="#">See recipe</a>
-        </div>
+      </article>
+      <div class="small-article-container">
+        <article class="small-article small-1">
+          <div class="small-article-info">
+            <h3>Cooking In Quarantine</h3>
+            <small>Written by John Doe</small>
+            <a href="#">Read more</a>
+          </div>
+        </article>
+        <article class="small-article small-2">
+          <div class="small-article-info">
+            <h3>Salmon Done Right</h3>
+            <small>Written by Jane Thompson</small>
+            <a href="#">Read more</a>
+          </div>
+        </article>
       </div>
     </section>
     <section class="trivia-container">
@@ -151,6 +160,26 @@
             >Learn more about us <i class="fas fa-arrow-right"></i
           ></a>
         </div>
+      </div>
+    </section>
+    <section class="social" id="social">
+      <div class="social-container">
+        <a target="_blank" href="https://www.facebook.com"
+          ><i class="fab fa-facebook-f" aria-hidden="true"></i
+          ><span class="sr-only">Facebook</span></a
+        >
+        <a target="_blank" href="https://www.twitter.com"
+          ><i class="fab fa-twitter" aria-hidden="true"></i
+          ><span class="sr-only">Twitter</span></a
+        >
+        <a target="_blank" href="https://www.instagram.com"
+          ><i class="fab fa-instagram" aria-hidden="true"></i
+          ><span class="sr-only">Instagram</span></a
+        >
+        <a target="_blank" href="https://www.youtube.com"
+          ><i class="fab fa-youtube" aria-hidden="true"></i
+          ><span class="sr-only">Youtube</span></a
+        >
       </div>
     </section>
     <footer></footer>

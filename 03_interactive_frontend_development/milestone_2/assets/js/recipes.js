@@ -5,54 +5,59 @@ const backupImage = './assets/images/rush-8.png';
 
 $(document).ready(() => {
   getRandomFact();
-
-  // setInterval(() => {
-  //   $('.fact').text('');
-  //   getRandomFact();
-  // }, 600000);
-  //On form submit, pull up 15 results for search item
   $('.search-container').on('submit', e => {
     e.preventDefault();
-    let searchTerm = $('.search-bar').val();
-    $.when(
-      $.getJSON(
-        `https://api.spoonacular.com/recipes/search?apiKey=${RECIPE_API}&number=15&query=${searchTerm}`
-      )
-    ).then(response => {
-      console.log(response);
-      let recipes = response.results;
-      let img;
-      // Check if no images
-      // Set backup image if no images
-      let elContainer = `<div class="recipe-test></div>`;
-      let el;
-      $('.recipe-card-list').prepend(
-        `<div class="recipe-inner-container"></div>`
-      );
-      recipes.map(recipe => {
-        if (recipe.imageUrls.length === 0) {
-          img = backupImage;
-        } else {
-          img = response.baseUri + recipe.image;
-        }
+    if ($('.search-bar').val() == '') {
+      $('.search-bar').addClass('error');
+      $('.error-message')
+        .css('display', 'block')
+        .css('height', '100%');
+    } else {
+      $('.full-recipe-container').remove();
+      $('.search-bar').removeClass('error');
+      $('.recipe-card-list').css('display', 'flex');
+      $('.error-message').css('display', 'none');
+      let searchTerm = $('.search-bar').val();
+      $.when(
+        $.getJSON(
+          `https://api.spoonacular.com/recipes/search?apiKey=${RECIPE_API}&number=15&query=${searchTerm}`
+        )
+      ).then(response => {
+        console.log(response);
+        let recipes = response.results;
+        let img;
+        // Check if no images
+        // Set backup image if no images
+        let elContainer = `<div class="recipe-test></div>`;
+        let el;
+        $('.recipe-card-list').prepend(
+          `<div class="recipe-inner-container"></div>`
+        );
+        recipes.map(recipe => {
+          if (recipe.imageUrls.length === 0) {
+            img = backupImage;
+          } else {
+            img = response.baseUri + recipe.image;
+          }
 
-        el = `<div class="recipe-card">
+          el = `<div class="recipe-card">
         <div class="img" style="background-image: url('${img}')"></div>
         <div class="recipe-details">
           <h3 class="recipe-card-heading">${recipe.title}</h3>
-          <span class="recipe-card-cook-time">Cook Time: ${recipe.readyInMinutes} minutes</span>
-          <div class="btn-container"><a class="btn recipe-card-view-recipe" href="#${recipe.id}" onclick="showIngredients(${recipe.id})">See recipe</a></div>
+          <span class="recipe-card-cook-time">Cook time: ${recipe.readyInMinutes} minutes</span>
+          <div class="btn-container"><a class="btn recipe-card-view-recipe" href="#top-recipes" onclick="showIngredients(${recipe.id})">See recipe</a></div>
         </div>
       </div>`;
-        $('.recipe-inner-container').prepend(el);
-      });
+          $('.recipe-inner-container').prepend(el);
+        });
 
-      if ($('.recipe-inner-container').length > 1) {
-        $('.recipe-inner-container')
-          .next()
-          .remove();
-      }
-    });
+        if ($('.recipe-inner-container').length > 1) {
+          $('.recipe-inner-container')
+            .next()
+            .remove();
+        }
+      });
+    }
   });
 });
 
@@ -80,9 +85,16 @@ function showIngredients(foodId) {
         <button class="btn back-btn" onclick="backBtn()">Back</button>
         <div class="full-recipe-title">
         <h2 class="full-recipe-heading">${response.title}</h2>
-        <p class="full-recipe-prep-time">Prep Time: ${response.preparationMinutes} minutes</p>
-        <p class="full-recipe-cook-time">Cook Time: ${response.cookingMinutes} minutes</p>
-        <p class="full-recipe-serving-size">Servings: ${response.servings}</p>
+        <div class="prep-icon-container">
+        <div class="prep-icon">
+        <i class="fas fa-utensils"></i>
+          <span>Serves ${response.servings}</span>
+        </div>
+        <div class="prep-icon">
+        <i class="far fa-clock"></i>
+          <span>${response.cookingMinutes} minutes</span>
+        </div>
+      </div>
         </div>
         <h4 class="summary-heading">Summary</h4>
         <p class="recipe-summary">${response.summary}</p>
@@ -93,7 +105,8 @@ function showIngredients(foodId) {
         </div>
         <div><ol class="instruction-list">
         <h4>Cooking Instructions: </ol></div>
-        <div id="donutchart" style="width: 900px; height: 500px;"></div>
+        <h4 class="nutrition-heading">Nutrition Information:</h4>
+        <div id="donutchart" style="width: 100%; height: 400px;"></div>
       </div>`;
 
       // Is there a better way to do this? .full-recipes moved to bottom of div when recipe was added
@@ -149,15 +162,16 @@ function createChart(calories, fat, protein, carbs) {
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
       ['Macro', 'Macros per Serving'],
-      ['Calories', calories],
       ['Fat (g)', fat],
       ['Protein (g)', protein],
       ['Carbs (g)', carbs]
     ]);
     console.log(data);
     var options = {
-      title: 'Nutrition Details',
-      pieHole: 0.4
+      pieHole: 0.4,
+      colors: ['#3ab86f', '#05d5ff', '#5533ff'],
+      chartArea: { width: '100%', height: '80%' },
+      legend: { position: 'bottom' }
     };
 
     var chart = new google.visualization.PieChart(

@@ -6,6 +6,14 @@
   margin: 0;
   padding: 0;
   font-family: 'PT Serif', serif;
+  scroll-behavior: smooth;
+}
+
+hr {
+  width: 100px;
+  height: 1px;
+  background-color: #05d5ff;
+  margin: 0 auto;
 }
 
 h1,
@@ -27,9 +35,25 @@ p {
   line-height: 1.5;
 }
 
-.fas {
+.fas,
+.far {
   font-size: 2rem;
   color: #3ab86f;
+}
+
+.error {
+  border: 3px solid rgb(255, 125, 4) !important;
+}
+
+.error-message {
+  width: 100%;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  padding: 5px 5px;
+  height: 0;
+  display: none;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
 }
 
 /* ----------------------------------------- Hero Section ----- */
@@ -40,6 +64,70 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.nav-container {
+  z-index: 100;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 70px;
+}
+
+.nav-icon i {
+  color: #fff;
+  font-size: 2.25rem;
+}
+
+.nav-icon span {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  transform: rotate(90deg);
+  display: inline-block;
+  font-size: 0.65rem;
+  margin: 0;
+  justify-self: top;
+  position: absolute;
+  top: 12px;
+  right: 5px;
+}
+
+.nav {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  background-color: #fff;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: 0 auto;
+  align-self: center;
+}
+
+.nav-item a {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.025rem;
+  color: #000;
+  justify-self: center;
+  text-transform: uppercase;
+}
+
+.nav-item {
+  list-style: none;
 }
 
 .hero-container {
@@ -133,10 +221,121 @@ header {
   margin-top: 20px;
 }
 
+/* ---------------------------------------- Articles Section ------- */
+
+.main-article {
+  width: 100%;
+  height: 300px;
+  background-image: url('../assets/images/food-layout.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin: 60px 0 120px;
+}
+
+.article-info {
+  width: 80%;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -80px;
+  padding: 20px;
+  transform: translateX(10%);
+  display: flex;
+  flex-direction: column;
+}
+
+.border {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  background-color: transparent;
+  border: 3px solid #fff;
+  transform: translate(5%, 5%);
+}
+
+.article-info h3 {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  color: #3ab86f;
+}
+
+.article-info small {
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.read-more {
+  background-color: #a6ffcb;
+  align-self: center;
+}
+
+.small-article-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.small-article {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 25%;
+  max-width: 400px;
+  margin: 30px 0 50px;
+  align-self: center;
+}
+
+.small-1 {
+  background-image: url('../assets/images/cutting-board.jpg');
+}
+
+.small-2 {
+  background-image: url('../assets/images/salmon-plate.jpg');
+}
+
+.small-article-info {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: -40px;
+}
+
+.small-article-info h3 {
+  color: #3ab86f;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+}
+
+.small-article-info a {
+  align-self: center;
+  display: block;
+  margin-top: 10px;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.small-article-info a:hover {
+  text-decoration: underline;
+}
+
 /* ---------------------------------------- Top Recipes Section ------- */
 .top-recipes-container {
-  width: 80%;
-  margin: 60px auto 120px;
+  width: 90%;
+  margin: 60px auto 300px;
 }
 
 .top-recipes-header {
@@ -156,15 +355,16 @@ header {
   justify-content: center;
   position: relative;
   margin: 60px 0;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  padding-top: 200px;
-  background-color: coral;
-  margin: 0 auto;
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  background-color: #a6ffcb;
   background-image: url('./images/spinach-chicken-pomegranate-salad-5938.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -176,9 +376,9 @@ header {
   background-color: #fff;
   margin: -40px auto 0;
   text-align: center;
-  box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.2);
-  width: 250px;
-  border-radius: 10px;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   height: 100%;
   position: relative;
   display: flex;
@@ -236,8 +436,6 @@ header {
 }
 
 .full-recipe-container {
-  /* box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2); */
-  padding: 20px;
   border-radius: 10px;
   width: 100%;
   transition: all 0.8s ease-in-out;
@@ -254,32 +452,30 @@ header {
 }
 
 .full-recipe-header {
-  padding: 30px;
+  padding: 10px;
 }
 
 .ingredient-list,
 .instruction-list {
-  /* -moz-column-count: 3;
-  -moz-column-gap: 20px;
-  -webkit-column-count: 3;
-  -webkit-column-gap: 20px;
-  column-count: 3;
-  column-gap: 20px; */
-
-  padding: 30px;
+  padding: 10px;
 }
 
 .ingredient-list h4,
-.instruction-list h4 {
+.instruction-list h4,
+.nutrition-heading {
   font-size: 1.5rem;
   color: #3ab86f;
   letter-spacing: 0.025rem;
 }
 
+.nutrition-heading {
+  padding-left: 10px;
+}
+
 .ingredient-list li {
   line-height: 1.5;
   text-transform: capitalize;
-  margin: 20px 0 10px 40px;
+  margin: 10px 0 10px 40px;
 }
 
 .instruction-list li {
@@ -294,7 +490,7 @@ header {
 
 .back-btn {
   background-color: #a6ffcb;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .full-recipe-title {
@@ -320,10 +516,55 @@ header {
   margin-bottom: 10px;
 }
 
+.prep-icon-container {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.prep-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #a6ffcb;
+  padding: 30px;
+  position: relative;
+  margin-right: 20px;
+}
+
+.prep-icon .far,
+.prep-icon .fas {
+  font-size: 2.25rem;
+  text-align: center;
+  width: 100%;
+}
+
+.prep-icon span {
+  width: 100%;
+  font-size: 0.85rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(0, -200%);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.025rem;
+  color: #3ab86f;
+}
+
+#donutchart {
+  margin: 0 auto 20px;
+  width: 100%;
+  min-height: 250px;
+}
+
 /* ---------------------------------------- Fun Facts Section ------- */
 .trivia-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #f6f9fc;
   position: relative;
   display: flex;
@@ -343,9 +584,28 @@ header {
   overflow: hidden;
 }
 
+.fun-facts-heading {
+  font-size: 1.75rem;
+  margin: 20px auto 0;
+  text-transform: uppercase;
+  letter-spacing: 0.025rem;
+  color: #737373;
+  border-bottom: 4px solid #05d5ff;
+  width: 300px;
+  text-align: center;
+}
+
 .fun-facts {
-  z-index: 100;
-  height: 100%;
+  width: 80%;
+  margin: 60px auto;
+}
+
+.fact {
+  padding: 60px 0;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #3ab86f;
+  text-align: center;
 }
 
 /* ---------------------------------------- About Section ------- */
@@ -365,10 +625,10 @@ header {
 .access-information,
 .other-information {
   padding: 30px 20px;
+  border-bottom: 2px solid #f6f9fc;
 }
 
 .access-information {
-  border-bottom: 2px solid #f6f9fc;
   margin-top: 40px;
   padding-bottom: 60px;
 }
@@ -413,6 +673,35 @@ header {
 .learn-link {
   width: 181px;
 }
+/* ---------------------------------------- Social Section------- */
+.social {
+  width: 80%;
+  margin: 60px auto;
+}
+
+.social-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.fab {
+  color: #000;
+  font-size: 2.5rem;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.fab:hover {
+  transform: translateY(-3px);
+}
+/* ---------------------------------------- Footer Section ------- */
+footer {
+  height: 400px;
+  width: 100%;
+  background-color: #f6f9fc;
+}
+
 /* ---------------------------------------- Media Query ------- */
 
 @media (min-width: 768px) {
@@ -444,6 +733,8 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    width: 80%;
+    margin-bottom: 300px;
   }
 
   .top-recipes-header {
@@ -453,8 +744,16 @@ header {
     font-size: 2.5rem;
   }
 
-  .recipe-details {
+  .recipe-card {
     width: 300px;
+  }
+
+  .recipe-details {
+    width: 100%;
+  }
+
+  .img {
+    width: 100%;
   }
 
   .recipe-card-heading {
@@ -483,8 +782,42 @@ header {
     margin: 10px auto;
   }
 
+  .small-article-container {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .small-article {
+    flex: 1;
+    padding-top: 20%;
+    max-width: 800px;
+    margin: 0 10px 60px;
+  }
+
+  /* ---------------------------------------- Fun Facts Section ------- */
   .trivia-container:before {
     transform: skewY(-6deg);
+  }
+
+  .fun-facts {
+    width: 80%;
+    margin: 60px auto;
+  }
+
+  .fun-facts-heading {
+    margin: 20px 0 0;
+    text-align: left;
+    width: 100%;
+    font-size: 2.5rem;
+  }
+
+  .fact {
+    padding: 60px 0;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #3ab86f;
+    text-align: center;
   }
 
   /* ---------------------------------------- About Section ------- */
@@ -517,5 +850,37 @@ header {
 
   .other-information {
     margin-right: 5%;
+    border-bottom: none;
+  }
+
+  /* ------------------------------------------- Full Recipe Section ------ */
+  .full-recipe-header {
+    padding: 30px;
+  }
+
+  .full-recipe-container {
+    padding: 20px;
+  }
+
+  .banner-img {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .ingredient-list,
+  .instruction-list {
+    padding: 30px;
+  }
+
+  .instruction-list li {
+    margin: 20px 0 10px 40px;
+  }
+
+  .nutrition-heading {
+    padding-left: 30px;
   }
 }
