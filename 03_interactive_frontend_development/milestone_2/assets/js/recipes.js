@@ -1,45 +1,53 @@
-// APIs hidden with .gitignore in a config.js file
-const RECIPE_API = config.RECIPE_API_KEY;
-const RECIPE_ID = config.RECIPE_API_ID;
+const RECIPE_API = 'fe4d98c4906948e2b62c8cde455bc054';
 const backupImage = './assets/images/rush-8.png';
 
 $(document).ready(() => {
+  // Menu animations
+  $('.nav-container').click(function () {
+    $('.nav').css('width', '100%');
+  });
+  $('.close').click(function () {
+    $('.nav').css('width', '0');
+  });
+
+  // get & display random fact on page load
   getRandomFact();
-  $('.search-container').on('submit', e => {
+  getRandomRecipe();
+
+  $('.search-container').on('submit', (e) => {
     e.preventDefault();
+
     if ($('.search-bar').val() == '') {
       $('.search-bar').addClass('error');
-      $('.error-message')
-        .css('display', 'block')
-        .css('height', '100%');
+      $('.error-message').css('display', 'block').css('height', '100%');
     } else {
       $('.full-recipe-container').remove();
       $('.search-bar').removeClass('error');
       $('.recipe-card-list').css('display', 'flex');
       $('.error-message').css('display', 'none');
+      $('#spinner').show();
       let searchTerm = $('.search-bar').val();
       $.when(
         $.getJSON(
           `https://api.spoonacular.com/recipes/search?apiKey=${RECIPE_API}&number=15&query=${searchTerm}`
         )
-      ).then(response => {
-        console.log(response);
+      ).then((response) => {
         let recipes = response.results;
         let img;
-        // Check if no images
-        // Set backup image if no images
-        let elContainer = `<div class="recipe-test></div>`;
         let el;
         $('.recipe-card-list').prepend(
           `<div class="recipe-inner-container"></div>`
         );
-        recipes.map(recipe => {
+        $('#spinner').hide();
+
+        // Check if no images
+        // Set backup image if no images
+        recipes.map((recipe) => {
           if (recipe.imageUrls.length === 0) {
             img = backupImage;
           } else {
             img = response.baseUri + recipe.image;
           }
-
           el = `<div class="recipe-card">
         <div class="img" style="background-image: url('${img}')"></div>
         <div class="recipe-details">
@@ -52,9 +60,7 @@ $(document).ready(() => {
         });
 
         if ($('.recipe-inner-container').length > 1) {
-          $('.recipe-inner-container')
-            .next()
-            .remove();
+          $('.recipe-inner-container').next().remove();
         }
       });
     }
@@ -62,7 +68,6 @@ $(document).ready(() => {
 });
 
 // Back Button
-
 function backBtn() {
   $('.recipe-card-list').css('display', 'flex');
   $('.full-recipe-container').remove();
@@ -71,16 +76,24 @@ function backBtn() {
 // show full recipe
 function showIngredients(foodId) {
   $('.recipe-card-list').css('display', 'none');
-
+  $('.loading-container ').show();
   $.when(
     $.getJSON(
       `https://api.spoonacular.com/recipes/${foodId}/information?apiKey=${RECIPE_API}`
-    ).then(response => {
-      console.log(response);
-
+    ).then((response) => {
       let item;
+      let img;
+
+      // Check if no images
+      // Set backup image if no images
+      if (!response.image) {
+        img = backupImage;
+      } else {
+        img = response.image;
+      }
+      $('.loading-container ').hide();
       let el = `<div class="full-recipe-container">
-      <div id="${foodId}" class="banner-img" style="background-image: url('${response.image}')"></div>
+      <div id="${foodId}" class="banner-img" style="background-image: url('${img}')"></div>
         <div class="full-recipe-header">
         <button class="btn back-btn" onclick="backBtn()">Back</button>
         <div class="full-recipe-title">
@@ -113,16 +126,14 @@ function showIngredients(foodId) {
       $('.top-recipes-container').prepend($('.full-recipes').prepend(el));
 
       if ($('.full-recipe-container').length > 1) {
-        $('.full-recipe-container')
-          .next()
-          .remove();
+        $('.full-recipe-container').next().remove();
       }
       getNutritionInfo(foodId);
-      response.analyzedInstructions[0].steps.forEach(step => {
+      response.analyzedInstructions[0].steps.forEach((step) => {
         $('.instruction-list').append(`<li>${step.step}</li>`);
       });
 
-      response.extendedIngredients.forEach(ingredient => {
+      response.extendedIngredients.forEach((ingredient) => {
         // hacked this together -- is there a better way to do this?
         item = Object.values(ingredient.originalString).join('');
         $('.ingredient-list').append(`<li>${item}</li>`);
@@ -131,12 +142,24 @@ function showIngredients(foodId) {
   );
 }
 
+function getRandomRecipe() {
+  $('.btn-random-recipe').click(() => {
+    $.when(
+      $.getJSON(
+        `https://api.spoonacular.com/recipes/random?apiKey=${RECIPE_API}`
+      )
+    ).then((response) => {
+      showIngredients(response.recipes[0].id);
+    });
+  });
+}
+
 function getRandomFact() {
   $.when(
     $.getJSON(
       `https://api.spoonacular.com/food/trivia/random?apiKey=${RECIPE_API}`
     )
-  ).then(response => {
+  ).then((response) => {
     $('.fact').prepend(response.text);
   });
 }
@@ -146,8 +169,7 @@ function getNutritionInfo(id) {
     $.getJSON(
       `https://api.spoonacular.com/recipes/${id}/nutritionWidget.json?apiKey=${RECIPE_API}`
     )
-  ).then(response => {
-    console.log(response);
+  ).then((response) => {
     let calories = parseInt(response.calories);
     let fat = parseInt(response.fat.replace('g', ''));
     let protein = parseInt(response.protein.replace('g', ''));
@@ -164,14 +186,13 @@ function createChart(calories, fat, protein, carbs) {
       ['Macro', 'Macros per Serving'],
       ['Fat (g)', fat],
       ['Protein (g)', protein],
-      ['Carbs (g)', carbs]
+      ['Carbs (g)', carbs],
     ]);
-    console.log(data);
     var options = {
       pieHole: 0.4,
       colors: ['#3ab86f', '#05d5ff', '#5533ff'],
       chartArea: { width: '100%', height: '80%' },
-      legend: { position: 'bottom' }
+      legend: { position: 'bottom' },
     };
 
     var chart = new google.visualization.PieChart(

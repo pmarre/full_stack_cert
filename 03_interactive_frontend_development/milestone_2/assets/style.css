@@ -78,6 +78,10 @@ header {
   width: 70px;
 }
 
+.nav-container {
+  cursor: pointer;
+}
+
 .nav-icon i {
   color: #fff;
   font-size: 2.25rem;
@@ -99,11 +103,12 @@ header {
 .nav {
   position: fixed;
   height: 60px;
-  width: 100%;
+  width: 0;
+  overflow: hidden;
   background-color: #fff;
-  z-index: 90;
+  z-index: 200;
   top: 0;
-  left: 0;
+  right: 0;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -113,7 +118,7 @@ header {
 .nav-list {
   display: flex;
   justify-content: space-evenly;
-  width: 50%;
+  width: 90%;
   margin: 0 auto;
   align-self: center;
 }
@@ -126,8 +131,18 @@ header {
   text-transform: uppercase;
 }
 
-.nav-item {
+.nav-item,
+.close {
   list-style: none;
+  align-self: center;
+}
+
+.close {
+  font-size: 1.5rem;
+}
+
+.close:hover {
+  cursor: pointer;
 }
 
 .hero-container {
@@ -175,12 +190,25 @@ header {
   width: 80%;
 }
 
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+#spinner {
+  position: absolute;
+  top: calc(50% - 7px);
+  right: 10px;
+  font-size: 1rem;
+  animation: spinner 0.5s infinite linear;
+  display: none;
+}
+
 .search-bar {
   width: 100%;
   border: none;
   padding: 10px;
   border-radius: 5px;
-
   transition: all 0.2s ease-in-out;
 }
 
@@ -333,6 +361,24 @@ header {
 }
 
 /* ---------------------------------------- Top Recipes Section ------- */
+.loading-container {
+  width: 50%;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  display: none;
+}
+
+#spinner-content {
+  animation: spinner 0.5s infinite;
+}
+
+.loading {
+  margin-top: 10px;
+}
+
 .top-recipes-container {
   width: 90%;
   margin: 60px auto 300px;
@@ -700,6 +746,69 @@ footer {
   height: 400px;
   width: 100%;
   background-color: #f6f9fc;
+  padding: 20px;
+}
+
+.footer-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.footer-logo-container {
+  width: 100%;
+  text-align: center;
+}
+
+.footer-menu-container {
+  width: 100%;
+  text-align: center;
+}
+
+.nav-list-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-list-footer .nav-item {
+  margin-top: 10px;
+}
+
+.nav-list-footer .nav-item .nav-link {
+  color: #000;
+  font-family: 'PT Serif', serif;
+}
+
+.nav-list-footer .nav-item .nav-link:hover {
+  text-decoration: underline;
+}
+
+.footer-social-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.footer-social-container a .fab {
+  font-size: 1rem;
+  background-color: #a6ffcb;
+  color: #3ab86f;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  line-height: 30px;
+}
+
+.footer-h4 {
+  width: 100%;
+  color: #3ab86f;
+  text-align: center;
+  margin: 20px 0;
+  text-transform: uppercase;
 }
 
 /* ---------------------------------------- Media Query ------- */
@@ -707,6 +816,10 @@ footer {
 @media (min-width: 768px) {
   #hero-background {
     transform: skewY(-6deg);
+  }
+
+  .nav-list {
+    width: 50%;
   }
 
   .search-container {
@@ -882,5 +995,44 @@ footer {
 
   .nutrition-heading {
     padding-left: 30px;
+  }
+
+  /* ------------------------------------------- Footer ------ */
+  footer {
+    height: 100%;
+    padding: 60px 20px;
+  }
+
+  .footer-container {
+    width: 80%;
+    flex-direction: row;
+  }
+
+  .footer-logo-container {
+    flex: 1;
+    align-self: center;
+  }
+
+  .footer-menu-container {
+    flex: 1;
+  }
+
+  .footer-social-container {
+    flex: 1;
+  }
+
+  .footer-social-container .footer-h4 {
+    margin-bottom: 10px;
+  }
+}
+
+/* ------------------------------------------------------ Animations --------- */
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
