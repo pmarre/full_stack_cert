@@ -83,7 +83,7 @@ function showIngredients(foodId) {
     ).then((response) => {
       let item;
       let img;
-
+      console.log(response);
       // Check if no images
       // Set backup image if no images
       if (!response.image) {
@@ -105,7 +105,7 @@ function showIngredients(foodId) {
         </div>
         <div class="prep-icon">
         <i class="far fa-clock"></i>
-          <span>${response.cookingMinutes} minutes</span>
+          <span>${response.readyInMinutes} minutes</span>
         </div>
       </div>
         </div>
