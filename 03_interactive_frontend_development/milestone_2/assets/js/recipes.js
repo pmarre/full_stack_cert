@@ -10,7 +10,7 @@ $(document).ready(() => {
     $('.nav').css('width', '0');
   });
 
-  // get & display random fact on page load
+  // get & display random fact/recipe on page load
   getRandomFact();
   getRandomRecipe();
 
@@ -21,6 +21,7 @@ $(document).ready(() => {
       $('.search-bar').addClass('error');
       $('.error-message').css('display', 'block').css('height', '100%');
     } else {
+      // put lines 24 - 29 in function and call here
       $('.full-recipe-container').remove();
       $('.search-bar').removeClass('error');
       $('.recipe-card-list').css('display', 'flex');
@@ -55,6 +56,8 @@ $(document).ready(() => {
           <span class="recipe-card-cook-time">Cook time: ${recipe.readyInMinutes} minutes</span>
           <div class="btn-container"><a class="btn recipe-card-view-recipe" href="#top-recipes" onclick="showIngredients(${recipe.id})">See recipe</a></div>
         </div>
+        <i class="far fa-heart heart-btn" id="heart-outline-${recipe.id}" onclick="toggleLikeBtn(${recipe.id})"></i>
+        <i class="fas fa-heart heart-btn" style="display: none;" id="heart-fill-${recipe.id}" onclick="toggleLikeBtn(${recipe.id})"></i>
       </div>`;
           $('.recipe-inner-container').prepend(el);
         });
@@ -66,6 +69,12 @@ $(document).ready(() => {
     }
   });
 });
+
+function toggleLikeBtn(id) {
+  arr = [];
+  $(`#heart-outline-${id}`).toggle();
+  $(`#heart-fill-${id}`).toggle();
+}
 
 // Back Button
 function backBtn() {
@@ -92,6 +101,8 @@ function showIngredients(foodId) {
         img = response.image;
       }
       $('.loading-container ').hide();
+
+      // Put in own function or find a way to put in HTML
       let el = `<div class="full-recipe-container">
       <div id="${foodId}" class="banner-img" style="background-image: url('${img}')"></div>
         <div class="full-recipe-header">
@@ -178,6 +189,7 @@ function getNutritionInfo(id) {
   });
 }
 
+// Add google charts
 function createChart(calories, fat, protein, carbs) {
   google.charts.load('current', { packages: ['corechart'] });
   google.charts.setOnLoadCallback(drawChart);
