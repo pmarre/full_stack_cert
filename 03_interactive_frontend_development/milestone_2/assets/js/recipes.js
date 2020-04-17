@@ -1,5 +1,6 @@
 'use strict';
 
+// API is throttled at 150 requests/day
 const RECIPE_API = '822ac61ec94b4490b4e562e53eccb278';
 const backupImage = './assets/images/rush-8.png';
 let savedRecipeIds = JSON.parse(window.localStorage.getItem('foodId'));
@@ -138,7 +139,7 @@ $(document).ready(() => {
   // get & display random fact/recipe on page load
   getRandomFact();
   getRandomRecipe();
-
+  getTrendingRecipes();
   // On search, build thumbnails
 
   $('.search-container').on('submit', (e) => {
@@ -223,6 +224,32 @@ function getNutritionInfo(id) {
     let protein = parseInt(response.protein.replace('g', ''));
     let carbs = parseInt(response.carbs.replace('g', ''));
     createChart(calories, fat, protein, carbs);
+  });
+}
+
+function getTrendingRecipes() {
+  $.ajax({
+    url: `https://api.spoonacular.com/recipes/random?`,
+    type: 'GET',
+    data: {
+      number: 3,
+      apiKey: RECIPE_API,
+    },
+    dataType: 'json',
+    success: (res) => {
+      console.log(res);
+      let recipes = res.recipes;
+      recipes.map((recipe, i) => {
+        let background = $(`.recipe-${i + 1}`);
+        background.css('background-image', `url('${recipe.image}')`);
+        let link = $(`.trending-link-${i + 1}`);
+        link.text(recipe.title);
+        link.attr('id', recipe.id);
+        link.click(() => {
+          showIngredients(recipe.id);
+        });
+      });
+    },
   });
 }
 
