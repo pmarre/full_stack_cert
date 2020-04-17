@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      media="all"
+      rel="stylesheet"
+      id="font-awesome-5-kit-css"
+    />
+    <link
+      href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css"
+      media="all"
+      rel="stylesheet"
+      id="font-awesome-5-kit-css"
+    />
+
+    <link
+      href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      media="all"
+      rel="stylesheet"
+      id="font-awesome-5-kit-css"
+    />
+    <link href="./assets/style.css" rel="stylesheet" />
+    <!-- Load Jasmine Framework -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine.js"
+      integrity="sha256-PePX8Jc4TIxzzVz0Qe4NsH3OUU8+Y49DBWvYgggNqkY="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine-html.js"
+      integrity="sha256-qazAASTTgUrq9SOYkPSB3oEuqbhn+2j4kxGkVZ0GKjY="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/boot.js"
+      integrity="sha256-HG8TKl0T65NyELmbUoo0H7/a1e++smYdXXtuuEsyKok="
+      crossorigin="anonymous"
+    ></script> -->
+
+    <!-- Load jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header id="submit-header">
+      <div class="nav-container">
+        <div class="nav-icon">
+          <i class="fas fa-hamburger"></i>
+          <span>MENU</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="savedRecipes.html" class="nav-link" id="saved-recipes-link"
+              >Saved Recipes</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="submitRecipe.html" class="nav-link">Submit A Recipe</a>
+          </li>
+          <li class="close">
+            &times;
+          </li>
+        </ul>
+      </nav>
+      <div id="submit-recipe-background"></div>
+      <section class="hero-container submit-recipes-hero-container"></section>
+    </header>
+    <section id="submit-recipe-container">
+      <div class="submit-recipe-form-container">
+        <div class="form-img"></div>
+        <form class="submit-recipe-form">
+          <h2>Submit your recipe</h2>
+          <span
+            >We love seeing what you're cooking, so send us your favorite
+            recipes!</span
+          >
+          <input
+            type="text"
+            name="name"
+            id="full-name"
+            placeholder="Enter your name"
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email address"
+          />
+          <input
+            type="text"
+            name="recipe-title"
+            id="recipe-title"
+            placeholder="Enter your recipe title"
+          />
+          <textarea
+            id="summary"
+            placeholder="Enter a quick summary of your recipe"
+          ></textarea>
+          <textarea
+            id="ingredients"
+            placeholder="Enter the required ingredients"
+          ></textarea>
+          <textarea
+            id="instructions"
+            placeholder="Enter the recipe instructions"
+          ></textarea>
+          <input
+            id="submit-recipe"
+            class="btn"
+            name="submit-recipe"
+            type="submit"
+            value="Submit your recipe"
+          />
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo-container">
+          <h1 class="footer-logo">Quarantini</h1>
+          <small>&copy; 2020 Quarantini Inc.</small>
+        </div>
+        <div class="footer-menu-container">
+          <h4 class="footer-h4">Menu Items</h4>
+          <ul class="nav-list-footer">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="savedRecipes.html" class="nav-link">Saved Recipes</a>
+            </li>
+            <li class="nav-item">
+              <a href="submitRecipe.html" class="nav-link">Submit A Recipe</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social-container">
+          <h4 class="footer-h4">Stay Connected With Us</h4>
+          <a target="_blank" href="https://www.facebook.com"
+            ><i class="fab fa-facebook-f" aria-hidden="true"></i
+            ><span class="sr-only">Facebook</span></a
+          >
+          <a target="_blank" href="https://www.twitter.com"
+            ><i class="fab fa-twitter" aria-hidden="true"></i
+            ><span class="sr-only">Twitter</span></a
+          >
+          <a target="_blank" href="https://www.instagram.com"
+            ><i class="fab fa-instagram" aria-hidden="true"></i
+            ><span class="sr-only">Instagram</span></a
+          >
+          <a target="_blank" href="https://www.youtube.com"
+            ><i class="fab fa-youtube" aria-hidden="true"></i
+            ><span class="sr-only">Youtube</span></a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/recipes.js"></script>
+  </body>
+</html>
