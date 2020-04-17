@@ -67,7 +67,7 @@ header {
 }
 
 .nav-container {
-  z-index: 100;
+  z-index: 1000;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -102,7 +102,7 @@ header {
 
 .nav {
   position: fixed;
-  height: 60px;
+  height: 200px;
   width: 0;
   overflow: hidden;
   background-color: #fff;
@@ -113,13 +113,19 @@ header {
   align-content: center;
   justify-content: center;
   transition: all 0.3s ease-in-out;
+  box-shadow: 4px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.nav-open {
+  width: 100%;
 }
 
 .nav-list {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   width: 90%;
-  margin: 0 auto;
+  margin: 10px 0;
   align-self: center;
 }
 
@@ -129,6 +135,7 @@ header {
   color: #000;
   justify-self: center;
   text-transform: uppercase;
+  margin: 10px 0;
 }
 
 .nav-item,
@@ -953,7 +960,7 @@ footer {
   top: 0;
   left: 0;
   transform: translate(5%, -30%);
-  z-index: 1000;
+
   background-color: #fff;
   padding: 50px;
   box-shadow: 4px 4px 3px 0 rgba(0, 0, 0, 0.3);
@@ -970,6 +977,16 @@ footer {
   justify-content: center;
   flex: 1;
   padding: 10px;
+}
+
+.submit-recipe-form h2 {
+  margin: 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+.submit-recipe-form span {
+  text-align: center;
 }
 
 .submit-recipe-form input,
@@ -1002,8 +1019,21 @@ footer {
     transform: skewY(-6deg);
   }
 
+  .nav {
+    height: 60px;
+  }
+
   .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     width: 50%;
+    margin: 0 auto;
+    align-self: center;
+  }
+
+  .nav-item a {
+    margin: 0;
   }
 
   .search-container {
@@ -1235,6 +1265,13 @@ footer {
     justify-content: center;
     flex: 1;
     padding: 10px;
+  }
+  .submit-recipe-form h2 {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+  .submit-recipe-form span {
+    text-align: left;
   }
 
   .submit-recipe-form input,

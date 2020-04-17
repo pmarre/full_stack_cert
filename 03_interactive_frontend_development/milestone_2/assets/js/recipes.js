@@ -129,10 +129,10 @@ const showIngredients = (foodId) => {
 $(document).ready(() => {
   // Menu animations
   $('.nav-container').click(function () {
-    $('.nav').css('width', '100%');
+    $('.nav').addClass('nav-open');
   });
   $('.close').click(function () {
-    $('.nav').css('width', '0');
+    $('.nav').removeClass('nav-open');
   });
 
   // get & display random fact/recipe on page load
