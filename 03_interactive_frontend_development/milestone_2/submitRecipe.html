@@ -53,7 +53,7 @@
     <title>Document</title>
   </head>
   <body>
-    <header class="saved-header">
+    <header id="submit-header">
       <div class="nav-container">
         <div class="nav-icon">
           <i class="fas fa-hamburger"></i>
@@ -78,22 +78,57 @@
           </li>
         </ul>
       </nav>
-      <div id="saved-recipe-background"></div>
-      <section class="hero-container saved-recipes-hero-container">
-        <h1 class="saved-recipes-heading">Check out your saved recipes</h1>
-      </section>
+      <div id="submit-recipe-background"></div>
+      <section class="hero-container submit-recipes-hero-container"></section>
     </header>
-    <section
-      class="top-recipes-container saved-recipes-container"
-      id="saved-recipe-container"
-    >
-      <h1 id="saved-heading"></h1>
-      <div class="loading-container">
-        <i class="fas fa-circle-notch" id="spinner-content"></i>
-        <p class="loading">Loading your recipe...</p>
+    <section id="submit-recipe-container">
+      <div class="submit-recipe-form-container">
+        <div class="form-img"></div>
+        <form class="submit-recipe-form">
+          <h2>Submit your recipe</h2>
+          <span
+            >We love seeing what you're cooking, so send us your favorite
+            recipes!</span
+          >
+          <input
+            type="text"
+            name="name"
+            id="full-name"
+            placeholder="Enter your name"
+          />
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Enter your email address"
+          />
+          <input
+            type="text"
+            name="recipe-title"
+            id="recipe-title"
+            placeholder="Enter your recipe title"
+          />
+          <textarea
+            id="summary"
+            placeholder="Enter a quick summary of your recipe"
+          ></textarea>
+          <textarea
+            id="ingredients"
+            placeholder="Enter the required ingredients"
+          ></textarea>
+          <textarea
+            id="instructions"
+            placeholder="Enter the recipe instructions"
+          ></textarea>
+          <input
+            id="submit-recipe"
+            class="btn"
+            name="submit-recipe"
+            type="submit"
+            value="Submit your recipe"
+          />
+        </form>
       </div>
-      <div class="full-recipes"></div>
-      <div class="recipe-card-list"></div>
     </section>
     <footer>
       <div class="footer-container">
@@ -137,6 +172,5 @@
       </div>
     </footer>
     <script src="assets/js/recipes.js"></script>
-    <script src="assets/js/savedRecipes.js"></script>
   </body>
 </html>
