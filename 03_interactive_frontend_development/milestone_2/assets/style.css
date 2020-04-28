@@ -352,6 +352,10 @@ header {
   margin: 60px auto 300px;
 }
 
+#showing-results-heading {
+  display: none;
+}
+
 .top-recipes-header {
   font-size: 1.75rem;
   margin: 20px auto 0;
@@ -370,8 +374,7 @@ header {
   position: relative;
   margin: 60px 0;
   width: 100%;
-  border-radius: 10px;
-  box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 10px 4px rgba(85, 85, 85, 0.2);
 }
 
 .save-btn-container {
@@ -405,8 +408,6 @@ header {
 .img {
   width: 100%;
   height: 300px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   background-color: #a6ffcb;
   background-image: url('./images/spinach-chicken-pomegranate-salad-5938.jpg');
   background-repeat: no-repeat;
@@ -417,19 +418,18 @@ header {
 
 .recipe-details {
   padding: 10px;
-  background-color: #fff;
+  background-color: #f6f9fc;
   margin: 0 auto;
   text-align: center;
   width: 100%;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  height: 100%;
+  height: 150px;
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
-.recipe-card-heading {
+/* .recipe-card-heading {
   text-transform: uppercase;
   font-size: 1.5rem;
   border-bottom: 2px solid #05d5ff;
@@ -441,7 +441,7 @@ header {
 .recipe-card-cook-time {
   color: gray;
   margin-bottom: 10px;
-}
+} */
 
 .recipe-card-description {
   margin-top: 10px;
@@ -449,10 +449,15 @@ header {
 }
 
 .recipe-card-view-recipe {
-  background-color: #a6ffcb;
   color: #000;
-  max-height: 50px;
-  justify-self: bottom;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.025rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.recipe-card:hover .recipe-card-view-recipe {
+  text-decoration: underline;
 }
 
 .btn-container {
@@ -879,7 +884,7 @@ footer {
 #submit-recipe-container {
   margin-bottom: 60px;
   position: relative;
-  height: 70vh;
+  height: 80vh;
 }
 
 .submit-recipes-heading {
@@ -919,7 +924,6 @@ footer {
   top: 0;
   left: 0;
   transform: translate(5%, -30%);
-
   background-color: #fff;
   padding: 50px;
   box-shadow: 4px 4px 3px 0 rgba(0, 0, 0, 0.3);
@@ -955,8 +959,13 @@ footer {
   border-radius: 5px;
   background-color: #f0f0f0;
   border: none;
-  max-width: 250px;
+  max-width: 100%;
   min-width: 250px;
+}
+
+.submit-recipe-form textarea {
+  min-height: 120px;
+  max-height: 200px;
 }
 
 #submit-recipe {
@@ -969,6 +978,18 @@ footer {
 
 .form-img {
   display: none;
+}
+
+#clear-recipe {
+  background-color: rgb(236, 0, 0);
+  color: #fff;
+  max-width: 250px;
+}
+
+.form-buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* ---------------------------------------- Media Query ------- */
@@ -1108,9 +1129,10 @@ footer {
   }
 
   .recipe-card-view-recipe {
-    background-color: #a6ffcb;
     color: #000;
     margin: 10px auto;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
   }
 
   /* ---------------------------------------- Fun Facts Section ------- */
@@ -1245,6 +1267,7 @@ footer {
   .submit-recipe-form-container {
     width: 80%;
     transform: translate(10%, -50%);
+    height: 80vh;
   }
 
   .submit-recipe-form {
@@ -1275,6 +1298,13 @@ footer {
     align-self: flex-start;
   }
 
+  #clear-recipe {
+    width: 200px;
+    margin-left: 20px;
+    padding: 10px 20px;
+    transition: none;
+  }
+
   .form-img {
     display: block;
     flex: 1;
@@ -1283,6 +1313,12 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
     padding: 10px;
+  }
+
+  .form-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
   }
 }
 

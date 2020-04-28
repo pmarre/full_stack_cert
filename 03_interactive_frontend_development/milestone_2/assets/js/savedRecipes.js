@@ -25,11 +25,8 @@ $(document).ready(() => {
                 </div>
             </div>
             <div class="recipe-details">
-                <h3 class="recipe-card-heading">${response.title}</h3>
-                <span class="recipe-card-cook-time">Cook time: ${response.readyInMinutes} minutes</span>
-                <div class="btn-container">
-                    <a class="btn recipe-card-view-recipe" href="#saved-recipes-container" onclick="showIngredients(${response.id})">See recipe</a>
-                </div>
+              <a class="recipe-card-view-recipe" href="#top-recipes" onclick="showIngredients(${response.id})">${response.title}</a>
+            </div>
             </div>
         </div>`;
 
