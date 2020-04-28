@@ -1,5 +1,5 @@
 ('use strict');
-
+console.log(savedRecipeIds, 'savedRecipeIds');
 $(document).ready(() => {
   console.log(savedRecipeIds);
   let foodId;

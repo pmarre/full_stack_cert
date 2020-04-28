@@ -1,6 +1,6 @@
 'use strict';
 
-// API is throttled at 150 requests/day
+// API is throttled at 100 requests/day
 // const RECIPE_API = '822ac61ec94b4490b4e562e53eccb278';
 const RECIPE_API = 'fe4d98c4906948e2b62c8cde455bc054';
 const backupImage = './assets/images/rush-8.png';
@@ -47,7 +47,8 @@ const buildThumbnail = (response) => {
     </div>`;
 
     $('.recipe-inner-container').prepend(thumbnailElement);
-    if (savedRecipe.indexOf(recipe.id) !== -1 || savedRecipe == null) {
+    console.log(savedRecipe, 'saved Recipe');
+    if (savedRecipe.indexOf(recipe.id) !== -1) {
       $(`#heart-fill-${recipe.id}`).toggle();
       $(`#heart-outline-${recipe.id}`).toggle();
       $(`#heart-fill-${recipe.id}`).addClass('saved');
