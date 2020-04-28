@@ -20,13 +20,15 @@ const buildThumbnail = (response) => {
   console.log(response);
 
   recipes.map((recipe) => {
-    if ('ImageUrl' in recipe) {
+    // check if recipe obj has key 'imageUrls'
+    if ('imageUrls' in recipe) {
       if (recipe.imageUrls.length === 0) {
         img = backupImage;
       }
     } else {
       img = response.baseUri + recipe.image;
     }
+
     thumbnailElement = `
     <div class="recipe-card">
       <div class="img" style="background-image: url('${img}')">
@@ -56,6 +58,7 @@ const buildThumbnail = (response) => {
     }
   });
 };
+
 const showIngredients = (foodId) => {
   $('.recipe-card-list').css('display', 'none');
   $('.loading-container ').show();
