@@ -63,10 +63,13 @@ const buildThumbnail = (response) => {
 const showIngredients = (foodId) => {
   $('.recipe-card-list').css('display', 'none');
   $('.loading-container ').show();
-  $.when(
-    $.getJSON(
-      `https://api.spoonacular.com/recipes/${foodId}/information?apiKey=${RECIPE_API}`
-    ).then((response) => {
+  $.ajax({
+    url: `https://api.spoonacular.com/recipes/${foodId}/information`,
+    type: 'GET',
+    data: {
+      apiKey: RECIPE_API,
+    },
+    success: (response) => {
       let item;
       let img;
       console.log(response);
@@ -130,8 +133,8 @@ const showIngredients = (foodId) => {
         item = Object.values(ingredient.originalString).join('');
         $('.ingredient-list').append(`<li>${item}</li>`);
       });
-    })
-  );
+    },
+  });
 };
 
 $(document).ready(() => {
@@ -163,12 +166,17 @@ $(document).ready(() => {
       $('.error-message').css('display', 'none');
       $('#spinner').show();
       let searchTerm = $('.search-bar').val();
-      $.when(
-        $.getJSON(
-          `https://api.spoonacular.com/recipes/search?apiKey=${RECIPE_API}&number=15&query=${searchTerm}`
-        )
-      ).then((response) => {
-        buildThumbnail(response);
+      $.ajax({
+        url: `https://api.spoonacular.com/recipes/search`,
+        type: 'GET',
+        data: {
+          query: searchTerm,
+          number: 15,
+          apiKey: RECIPE_API,
+        },
+        success: (response) => {
+          buildThumbnail(response);
+        },
       });
     }
   });
