@@ -38,11 +38,7 @@ const buildThumbnail = (response) => {
         </div>
       </div>
       <div class="recipe-details">
-        <h3 class="recipe-card-heading">${recipe.title}</h3>
-        <span class="recipe-card-cook-time">Cook time: ${recipe.readyInMinutes} minutes</span>
-        <div class="btn-container">
-          <a class="btn recipe-card-view-recipe" href="#top-recipes" onclick="showIngredients(${recipe.id})">See recipe</a>
-        </div>
+          <a class="recipe-card-view-recipe" href="#top-recipes" onclick="showIngredients(${recipe.id})">${recipe.title}</a>
       </div>
     </div>`;
 
@@ -143,6 +139,10 @@ $(document).ready(() => {
     $('.nav').removeClass('nav-open');
   });
 
+  $('#clear-recipe').click(() => {
+    $('.recipe-form-input').val('');
+  });
+
   // get & display random fact/recipe on page load
   getRandomFact();
   getRandomRecipe();
@@ -151,8 +151,8 @@ $(document).ready(() => {
 
   $('.search-container').on('submit', (e) => {
     e.preventDefault();
-
-    if ($('.search-bar').val() == '') {
+    let searchTerm = $('.search-bar').val();
+    if (searchTerm == '') {
       $('.search-bar').addClass('error');
       $('.error-message').css('display', 'block').css('height', '100%');
     } else {
@@ -162,13 +162,22 @@ $(document).ready(() => {
       $('.recipe-card-list').css('display', 'flex');
       $('.error-message').css('display', 'none');
       $('#spinner').show();
-      let searchTerm = $('.search-bar').val();
+      $('#showing-results-heading')
+        .show()
+        .text(`Showing results for '${searchTerm}':`);
       $.when(
         $.getJSON(
           `https://api.spoonacular.com/recipes/search?apiKey=${RECIPE_API}&number=15&query=${searchTerm}`
         )
       ).then((response) => {
-        buildThumbnail(response);
+        if (response.totalResults > 0) {
+          buildThumbnail(response);
+        } else {
+          $('#showing-results-heading')
+            .show()
+            .text(`Sorry, no results for '${searchTerm}'!`);
+          $('.recipe-card-list').css('display', 'none');
+        }
       });
     }
   });

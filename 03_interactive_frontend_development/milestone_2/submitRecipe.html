@@ -94,39 +94,54 @@
             type="text"
             name="name"
             id="full-name"
+            class="recipe-form-input"
             placeholder="Enter your name"
           />
           <input
             type="email"
             name="email"
             id="email"
+            class="recipe-form-input"
             placeholder="Enter your email address"
           />
           <input
             type="text"
             name="recipe-title"
             id="recipe-title"
+            class="recipe-form-input"
             placeholder="Enter your recipe title"
           />
           <textarea
             id="summary"
+            class="recipe-form-input"
             placeholder="Enter a quick summary of your recipe"
           ></textarea>
           <textarea
             id="ingredients"
+            class="recipe-form-input"
             placeholder="Enter the required ingredients"
           ></textarea>
           <textarea
             id="instructions"
+            class="recipe-form-input"
             placeholder="Enter the recipe instructions"
           ></textarea>
-          <input
-            id="submit-recipe"
-            class="btn"
-            name="submit-recipe"
-            type="submit"
-            value="Submit your recipe"
-          />
+          <div class="form-buttons-container">
+            <input
+              id="submit-recipe"
+              class="btn"
+              name="submit-recipe"
+              type="submit"
+              value="Submit your recipe"
+            />
+            <input
+              id="clear-recipe"
+              class="btn"
+              name="clear-recipe"
+              type="button"
+              value="Clear form"
+            />
+          </div>
         </form>
       </div>
     </section>
