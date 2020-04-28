@@ -47,7 +47,7 @@ const buildThumbnail = (response) => {
     </div>`;
 
     $('.recipe-inner-container').prepend(thumbnailElement);
-    if (savedRecipe.indexOf(recipe.id) !== -1) {
+    if (savedRecipe.indexOf(recipe.id) !== -1 || savedRecipe == null) {
       $(`#heart-fill-${recipe.id}`).toggle();
       $(`#heart-outline-${recipe.id}`).toggle();
       $(`#heart-fill-${recipe.id}`).addClass('saved');
