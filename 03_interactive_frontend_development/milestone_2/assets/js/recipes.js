@@ -1,6 +1,8 @@
 'use strict';
 
-const RECIPE_API = '822ac61ec94b4490b4e562e53eccb278';
+// API is throttled at 150 requests/day
+// const RECIPE_API = '822ac61ec94b4490b4e562e53eccb278';
+const RECIPE_API = 'fe4d98c4906948e2b62c8cde455bc054';
 const backupImage = './assets/images/rush-8.png';
 let savedRecipeIds = JSON.parse(window.localStorage.getItem('foodId'));
 
@@ -143,7 +145,7 @@ $(document).ready(() => {
   // get & display random fact/recipe on page load
   getRandomFact();
   getRandomRecipe();
-
+  getTrendingRecipes();
   // On search, build thumbnails
 
   $('.search-container').on('submit', (e) => {
@@ -197,37 +199,81 @@ function backBtn() {
 
 function getRandomRecipe() {
   $('.btn-random-recipe').click(() => {
-    $.when(
-      $.getJSON(
-        `https://api.spoonacular.com/recipes/random?apiKey=${RECIPE_API}`
-      )
-    ).then((response) => {
-      showIngredients(response.recipes[0].id);
+    $.ajax({
+      url: `https://api.spoonacular.com/recipes/random`,
+      type: 'GET',
+      data: {
+        number: 1,
+        apiKey: RECIPE_API,
+      },
+      dataType: 'json',
+      success: (response) => {
+        showIngredients(response.recipes[0].id);
+      },
     });
   });
 }
 
 function getRandomFact() {
-  $.when(
-    $.getJSON(
-      `https://api.spoonacular.com/food/trivia/random?apiKey=${RECIPE_API}`
-    )
-  ).then((response) => {
-    $('.fact').prepend(response.text);
+  $.ajax({
+    url: `https://api.spoonacular.com/food/trivia/random`,
+    type: 'GET',
+    data: {
+      apiKey: RECIPE_API,
+    },
+    dataType: 'json',
+    success: (response) => {
+      $('.fact').prepend(response.text);
+    },
   });
 }
 
 function getNutritionInfo(id) {
-  $.when(
-    $.getJSON(
-      `https://api.spoonacular.com/recipes/${id}/nutritionWidget.json?apiKey=${RECIPE_API}`
-    )
-  ).then((response) => {
-    let calories = parseInt(response.calories);
-    let fat = parseInt(response.fat.replace('g', ''));
-    let protein = parseInt(response.protein.replace('g', ''));
-    let carbs = parseInt(response.carbs.replace('g', ''));
-    createChart(calories, fat, protein, carbs);
+  $.ajax({
+    url: `https://api.spoonacular.com/recipes/${id}/nutritionWidget.json`,
+    type: 'GET',
+    data: {
+      apiKey: RECIPE_API,
+    },
+    dataType: 'json',
+    success: (response) => {
+      let fat = parseInt(response.fat.replace('g', ''));
+      let protein = parseInt(response.protein.replace('g', ''));
+      let carbs = parseInt(response.carbs.replace('g', ''));
+      createChart(fat, protein, carbs);
+    },
+  });
+}
+
+function getTrendingRecipes() {
+  $.ajax({
+    url: `https://api.spoonacular.com/recipes/random?`,
+    type: 'GET',
+    data: {
+      number: 3,
+      apiKey: RECIPE_API,
+    },
+    dataType: 'json',
+    success: (res) => {
+      console.log(res);
+      let recipes = res.recipes;
+      recipes.map((recipe, i) => {
+        // Remove HTML elements from API summary
+        let summary = recipe.summary.replace(/<[^>]*>?/gm, '');
+        let background = $(`.recipe-${i + 1}`);
+        background.css('background-image', `url('${recipe.image}')`);
+        let link = $(`.trending-link-${i + 1}`);
+        link.text(recipe.title);
+        link.attr('id', recipe.id);
+        $(`.trending-summary-${i + 1}`).append(`<p class='sum'>${summary}</p>`);
+        $(`.trending-summary-${i + 1}`)
+          .append(`<i class="far fa-heart heart-btn heart-btn-outline" id="heart-outline-${recipe.id}" style="display: block;" onclick="toggleLikeBtn(${recipe.id})"></i>
+        <i class="fas fa-heart heart-btn heart-btn-fill" style="display: none;" id="heart-fill-${recipe.id}" onclick="toggleLikeBtn(${recipe.id})"></i>`);
+        link.click(() => {
+          showIngredients(recipe.id);
+        });
+      });
+    },
   });
 }
 

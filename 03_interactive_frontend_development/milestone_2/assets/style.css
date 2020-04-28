@@ -258,115 +258,74 @@ header {
   margin-top: 20px;
 }
 
-/* ---------------------------------------- Articles Section ------- */
+/* ---------------------------------------- Trending Section ------- */
 
-.main-article {
+.trending-recipes-container {
   width: 100%;
-  height: 300px;
-  background-image: url('../assets/images/food-layout.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+.trending-recipe {
+  margin: 40px auto 20px;
+  height: 600px;
   position: relative;
-  margin: 60px 0 120px;
-}
-
-.article-info {
-  width: 80%;
-  background-color: #fff;
-  position: absolute;
-  left: 0;
-  bottom: -80px;
-  padding: 20px;
-  transform: translateX(10%);
-  display: flex;
-  flex-direction: column;
-}
-
-.border {
-  width: 90%;
-  height: 90%;
-  position: absolute;
-  background-color: transparent;
-  border: 3px solid #fff;
-  transform: translate(5%, 5%);
-}
-
-.article-info h3 {
-  font-size: 2rem;
-  text-align: center;
-  width: 100%;
-  text-transform: uppercase;
-  color: #3ab86f;
-}
-
-.article-info small {
-  text-align: center;
-  width: 100%;
-  display: block;
-}
-
-.read-more {
-  background-color: #a6ffcb;
-  align-self: center;
-}
-
-.small-article-container {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.small-article {
-  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  box-shadow: 4px 4px 10px 4px rgba(85, 85, 85, 0.2);
+  padding-bottom: 30px;
+}
+
+.trending-content {
+  flex: 1;
+  height: 100%;
+  padding: 20px;
+}
+
+.trending-summary {
+  margin: 10px 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.trending-recipe-img {
+  flex: 1;
+  width: 100%;
+  height: 250px;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 25%;
-  max-width: 400px;
-  margin: 30px 0 50px;
-  align-self: center;
+  background-position: center;
 }
 
-.small-1 {
-  background-image: url('../assets/images/cutting-board.jpg');
-}
-
-.small-2 {
-  background-image: url('../assets/images/salmon-plate.jpg');
-}
-
-.small-article-info {
-  display: flex;
-  width: 90%;
-  flex-direction: column;
-  margin: 0 auto;
-  justify-content: center;
-  text-align: center;
-  background-color: #fff;
-  padding: 10px;
-  margin-bottom: -40px;
-}
-
-.small-article-info h3 {
-  color: #3ab86f;
+.trending-link {
+  font-family: 'Montserrat';
+  font-size: 1.25rem;
+  margin-top: 20px;
   letter-spacing: 0.025rem;
   text-transform: uppercase;
+  flex: 1;
+  color: #3ab86f;
 }
 
-.small-article-info a {
-  align-self: center;
-  display: block;
-  margin-top: 10px;
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-}
-
-.small-article-info a:hover {
+.trending-link:hover {
   text-decoration: underline;
+}
+
+.sum {
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  color: #000;
+  margin-top: 20px;
+  padding: 10px;
 }
 
 /* ---------------------------------------- Top Recipes Section ------- */
@@ -400,7 +359,7 @@ header {
   letter-spacing: 0.025rem;
   color: #737373;
   border-bottom: 4px solid #05d5ff;
-  width: 240px;
+  width: 300px;
   text-align: center;
 }
 
@@ -1039,6 +998,7 @@ footer {
   .search-container {
     flex-direction: row;
     flex-wrap: wrap;
+    max-width: 1200px;
   }
 
   .btn {
@@ -1052,6 +1012,47 @@ footer {
 
   .hero-subheading {
     font-size: 1.5rem;
+  }
+
+  /* ---------------------------------------- Trending Section ------- */
+
+  .trending-recipes-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    max-width: 1250px;
+  }
+
+  .trending-recipe-img {
+    height: 300px;
+  }
+
+  .trending-recipe-container-lg {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 1200px;
+    align-content: center;
+  }
+
+  .trending-recipe-container-sm {
+    flex: 1 0 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 550px;
+    margin: 20px 10px;
+    height: 600px;
+  }
+
+  .trending-summary {
+    margin: 10px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   /* ---------------------------------------- Top Recipes Section ------- */
@@ -1110,19 +1111,6 @@ footer {
     background-color: #a6ffcb;
     color: #000;
     margin: 10px auto;
-  }
-
-  .small-article-container {
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .small-article {
-    flex: 1;
-    padding-top: 20%;
-    max-width: 800px;
-    margin: 0 10px 60px;
   }
 
   /* ---------------------------------------- Fun Facts Section ------- */
@@ -1251,7 +1239,7 @@ footer {
   }
 
   #submit-recipe-container {
-    height: 35vh;
+    min-height: 40vh;
   }
 
   .submit-recipe-form-container {
