@@ -43,7 +43,6 @@ const buildThumbnail = (response) => {
     </div>`;
 
     $('.recipe-inner-container').prepend(thumbnailElement);
-    console.log(savedRecipe, 'saved Recipe');
     if (savedRecipe.indexOf(recipe.id) !== -1) {
       $(`#heart-fill-${recipe.id}`).toggle();
       $(`#heart-outline-${recipe.id}`).toggle();
@@ -130,6 +129,18 @@ const showIngredients = (foodId) => {
         $('.ingredient-list').append(`<li>${item}</li>`);
       });
     },
+
+    error: function (xhr, status) {
+      if (typeof this.statusCode[xhr.status] != 'undefined') {
+        return false;
+      }
+      console.log(status);
+    },
+    statusCode: {
+      402: function (response) {
+        throttledApiRedirect();
+      },
+    },
   });
 };
 
@@ -186,6 +197,18 @@ $(document).ready(() => {
             $('.recipe-card-list').css('display', 'none');
           }
         },
+
+        error: function (xhr, status) {
+          if (typeof this.statusCode[xhr.status] != 'undefined') {
+            return false;
+          }
+          console.log(status);
+        },
+        statusCode: {
+          402: function (response) {
+            throttledApiRedirect();
+          },
+        },
       });
     }
   });
@@ -227,6 +250,17 @@ function getRandomRecipe() {
       success: (response) => {
         showIngredients(response.recipes[0].id);
       },
+      error: function (xhr, status) {
+        if (typeof this.statusCode[xhr.status] != 'undefined') {
+          return false;
+        }
+        console.log(status);
+      },
+      statusCode: {
+        402: function (response) {
+          throttledApiRedirect();
+        },
+      },
     });
   });
 }
@@ -241,6 +275,17 @@ function getRandomFact() {
     dataType: 'json',
     success: (response) => {
       $('.fact').prepend(response.text);
+    },
+    error: function (xhr, status) {
+      if (typeof this.statusCode[xhr.status] != 'undefined') {
+        return false;
+      }
+      console.log(status);
+    },
+    statusCode: {
+      402: function (response) {
+        throttledApiRedirect();
+      },
     },
   });
 }
@@ -258,6 +303,17 @@ function getNutritionInfo(id) {
       let protein = parseInt(response.protein.replace('g', ''));
       let carbs = parseInt(response.carbs.replace('g', ''));
       createChart(fat, protein, carbs);
+    },
+    error: function (xhr, status) {
+      if (typeof this.statusCode[xhr.status] != 'undefined') {
+        return false;
+      }
+      console.log(status);
+    },
+    statusCode: {
+      402: function (response) {
+        throttledApiRedirect();
+      },
     },
   });
 }
@@ -291,7 +347,22 @@ function getTrendingRecipes() {
         });
       });
     },
+    error: function (xhr, status) {
+      if (typeof this.statusCode[xhr.status] != 'undefined') {
+        return false;
+      }
+      console.log(status);
+    },
+    statusCode: {
+      402: function (response) {
+        throttledApiRedirect();
+      },
+    },
   });
+}
+
+function throttledApiRedirect() {
+  location.replace('./throttled.html');
 }
 
 // Add google charts
