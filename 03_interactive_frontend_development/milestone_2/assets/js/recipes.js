@@ -129,6 +129,7 @@ const showIngredients = (foodId) => {
         $('.ingredient-list').append(`<li>${item}</li>`);
       });
     },
+
     error: function (xhr, status) {
       if (typeof this.statusCode[xhr.status] != 'undefined') {
         return false;
@@ -196,6 +197,7 @@ $(document).ready(() => {
             $('.recipe-card-list').css('display', 'none');
           }
         },
+
         error: function (xhr, status) {
           if (typeof this.statusCode[xhr.status] != 'undefined') {
             return false;
@@ -211,7 +213,6 @@ $(document).ready(() => {
     }
   });
 });
-
 function toggleLikeBtn(id) {
   if ($(`#heart-fill-${id}`).hasClass('saved')) {
     $(`#heart-outline-${id}`).toggle();
