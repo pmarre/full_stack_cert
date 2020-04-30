@@ -1,13 +1,11 @@
 ('use strict');
-console.log(savedRecipeIds, 'savedRecipeIds');
 $(document).ready(() => {
-  console.log(savedRecipeIds);
-  let foodId;
+  console.log(localStorage);
   $('.recipe-card-list').prepend(
     `<div class="recipe-inner-container" id="saved-container"></div>`
   );
-  if (savedRecipeIds.length > 0) {
-    foodId = savedRecipeIds.map((id) => {
+  if (localStorage.length > 0) {
+    Object.keys(localStorage).map((id) => {
       $.ajax({
         url: `https://api.spoonacular.com/recipes/${id}/information`,
         type: 'GET',
@@ -33,7 +31,7 @@ $(document).ready(() => {
         </div>`;
 
           $('#saved-container').prepend(thumbnailElement);
-          if (savedRecipeIds.indexOf(response.id) !== -1) {
+          if (localStorage.getItem(response.id) !== null) {
             $(`#heart-fill-${response.id}`).toggle();
             $(`#heart-outline-${response.id}`).toggle();
             $(`#heart-fill-${response.id}`).addClass('saved');

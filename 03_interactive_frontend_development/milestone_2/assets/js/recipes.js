@@ -1,15 +1,13 @@
 'use strict';
 
 // API is throttled at 100 requests/day
-const RECIPE_API = '822ac61ec94b4490b4e562e53eccb278';
-// const RECIPE_API = 'fe4d98c4906948e2b62c8cde455bc054';
+// const RECIPE_API = '822ac61ec94b4490b4e562e53eccb278';
+const RECIPE_API = 'fe4d98c4906948e2b62c8cde455bc054';
 const backupImage = './assets/images/rush-8.png';
-let savedRecipeIds = JSON.parse(window.localStorage.getItem('foodId'));
 
 // Build thumbnails
 const buildThumbnail = (response) => {
   let recipes = response.results;
-  let savedRecipe = JSON.parse(window.localStorage.getItem('foodId'));
   let img;
   let thumbnailElement;
   $('.recipe-card-list').prepend(`<div class="recipe-inner-container"></div>`);
@@ -43,10 +41,11 @@ const buildThumbnail = (response) => {
     </div>`;
 
     $('.recipe-inner-container').prepend(thumbnailElement);
-    if (savedRecipe.indexOf(recipe.id) !== -1) {
+    if (localStorage.getItem(recipe.id) !== null) {
       $(`#heart-fill-${recipe.id}`).toggle();
       $(`#heart-outline-${recipe.id}`).toggle();
       $(`#heart-fill-${recipe.id}`).addClass('saved');
+      localStorage.setItem(id, id);
     }
 
     if ($('.recipe-inner-container').length > 1) {
@@ -145,6 +144,7 @@ const showIngredients = (foodId) => {
 };
 
 $(document).ready(() => {
+  localStorage.removeItem('foodId');
   // Menu animations
   $('.nav-container').click(function () {
     $('.nav').addClass('nav-open');
@@ -213,22 +213,24 @@ $(document).ready(() => {
     }
   });
 });
+
 function toggleLikeBtn(id) {
   if ($(`#heart-fill-${id}`).hasClass('saved')) {
     $(`#heart-outline-${id}`).toggle();
     $(`#heart-fill-${id}`).toggle();
     $(`#heart-fill-${id}`).removeClass('saved');
-    let i = savedRecipeIds.indexOf(id);
-    if (i !== -1) {
-      savedRecipeIds.splice(i, 1);
+
+    if (localStorage.getItem(id) !== null) {
+      localStorage.removeItem(id);
+      console.log('removed', localStorage);
     }
   } else {
     $(`#heart-fill-${id}`).toggle();
     $(`#heart-outline-${id}`).toggle();
     $(`#heart-fill-${id}`).addClass('saved');
-    savedRecipeIds.unshift(id);
+    localStorage.setItem(id, id);
   }
-  window.localStorage.setItem('foodId', JSON.stringify(savedRecipeIds));
+  console.log(localStorage);
 }
 
 // Back Button
@@ -262,6 +264,9 @@ function getRandomRecipe() {
         },
       },
     });
+    $('#spinner').hide();
+    $('#showing-results-heading').hide();
+    $('#search-bar').val('');
   });
 }
 
