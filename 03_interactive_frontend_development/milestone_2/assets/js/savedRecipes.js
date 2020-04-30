@@ -1,6 +1,5 @@
 ('use strict');
 $(document).ready(() => {
-  console.log(localStorage);
   $('.recipe-card-list').prepend(
     `<div class="recipe-inner-container" id="saved-container"></div>`
   );
@@ -13,8 +12,6 @@ $(document).ready(() => {
           apiKey: RECIPE_API,
         },
         success: (response) => {
-          console.log(response);
-
           // buildThumbnail(response);
           let thumbnailElement = `
         <div class="recipe-card">

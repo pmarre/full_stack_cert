@@ -14,9 +14,7 @@ const buildThumbnail = (response) => {
   $('#spinner').hide();
 
   // Check if no images
-  // Set backup image if no images
-  console.log(response);
-
+  // Set backup image if no image
   recipes.map((recipe) => {
     // check if recipe obj has key 'imageUrls'
     if ('imageUrls' in recipe) {
@@ -45,7 +43,7 @@ const buildThumbnail = (response) => {
       $(`#heart-fill-${recipe.id}`).toggle();
       $(`#heart-outline-${recipe.id}`).toggle();
       $(`#heart-fill-${recipe.id}`).addClass('saved');
-      localStorage.setItem(id, id);
+      localStorage.setItem(recipe.id, recipe.id);
     }
 
     if ($('.recipe-inner-container').length > 1) {
@@ -66,7 +64,6 @@ const showIngredients = (foodId) => {
     success: (response) => {
       let item;
       let img;
-      console.log(response);
       // Check if no images
       // Set backup image if no images
       if (!response.image) {
@@ -133,7 +130,6 @@ const showIngredients = (foodId) => {
       if (typeof this.statusCode[xhr.status] != 'undefined') {
         return false;
       }
-      console.log(status);
     },
     statusCode: {
       402: function (response) {
@@ -202,7 +198,6 @@ $(document).ready(() => {
           if (typeof this.statusCode[xhr.status] != 'undefined') {
             return false;
           }
-          console.log(status);
         },
         statusCode: {
           402: function (response) {
@@ -222,7 +217,6 @@ function toggleLikeBtn(id) {
 
     if (localStorage.getItem(id) !== null) {
       localStorage.removeItem(id);
-      console.log('removed', localStorage);
     }
   } else {
     $(`#heart-fill-${id}`).toggle();
@@ -230,7 +224,6 @@ function toggleLikeBtn(id) {
     $(`#heart-fill-${id}`).addClass('saved');
     localStorage.setItem(id, id);
   }
-  console.log(localStorage);
 }
 
 // Back Button
@@ -256,7 +249,6 @@ function getRandomRecipe() {
         if (typeof this.statusCode[xhr.status] != 'undefined') {
           return false;
         }
-        console.log(status);
       },
       statusCode: {
         402: function (response) {
@@ -285,7 +277,6 @@ function getRandomFact() {
       if (typeof this.statusCode[xhr.status] != 'undefined') {
         return false;
       }
-      console.log(status);
     },
     statusCode: {
       402: function (response) {
@@ -313,7 +304,6 @@ function getNutritionInfo(id) {
       if (typeof this.statusCode[xhr.status] != 'undefined') {
         return false;
       }
-      console.log(status);
     },
     statusCode: {
       402: function (response) {
@@ -333,7 +323,6 @@ function getTrendingRecipes() {
     },
     dataType: 'json',
     success: (res) => {
-      console.log(res);
       let recipes = res.recipes;
       recipes.map((recipe, i) => {
         // Remove HTML elements from API summary
@@ -356,7 +345,6 @@ function getTrendingRecipes() {
       if (typeof this.statusCode[xhr.status] != 'undefined') {
         return false;
       }
-      console.log(status);
     },
     statusCode: {
       402: function (response) {
