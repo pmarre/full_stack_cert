@@ -367,7 +367,7 @@ function getTrendingRecipes() {
 }
 
 function throttledApiRedirect() {
-  location.replace('./throttled.html');
+  location.replace('/throttled.html');
 }
 
 // Add google charts
