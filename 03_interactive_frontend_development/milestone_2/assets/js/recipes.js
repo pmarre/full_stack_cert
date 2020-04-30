@@ -367,7 +367,7 @@ function getTrendingRecipes() {
 }
 
 function throttledApiRedirect() {
-  location.replace('/throttled.html');
+  location.replace('/full_stack_cert/03_interactive_frontend_development/milestone_2/throttled.html');
 }
 
 // Add google charts
