@@ -8,15 +8,17 @@ $(document).ready(() => {
   );
   if (savedRecipeIds.length > 0) {
     foodId = savedRecipeIds.map((id) => {
-      $.when(
-        $.getJSON(
-          `https://api.spoonacular.com/recipes/${id}/information?apiKey=${RECIPE_API}`
-        )
-      ).then((response) => {
-        console.log(response);
+      $.ajax({
+        url: `https://api.spoonacular.com/recipes/${id}/information`,
+        type: 'GET',
+        data: {
+          apiKey: RECIPE_API,
+        },
+        success: (response) => {
+          console.log(response);
 
-        // buildThumbnail(response);
-        let thumbnailElement = `
+          // buildThumbnail(response);
+          let thumbnailElement = `
         <div class="recipe-card">
             <div class="img" style="background-image: url('${response.image}')">
                 <div class="save-btn-container">
@@ -30,16 +32,17 @@ $(document).ready(() => {
             </div>
         </div>`;
 
-        $('#saved-container').prepend(thumbnailElement);
-        if (savedRecipeIds.indexOf(response.id) !== -1) {
-          $(`#heart-fill-${response.id}`).toggle();
-          $(`#heart-outline-${response.id}`).toggle();
-          $(`#heart-fill-${response.id}`).addClass('saved');
-        }
+          $('#saved-container').prepend(thumbnailElement);
+          if (savedRecipeIds.indexOf(response.id) !== -1) {
+            $(`#heart-fill-${response.id}`).toggle();
+            $(`#heart-outline-${response.id}`).toggle();
+            $(`#heart-fill-${response.id}`).addClass('saved');
+          }
 
-        if ($('.recipe-inner-container').length > 1) {
-          $('.recipe-inner-container').next().remove();
-        }
+          if ($('.recipe-inner-container').length > 1) {
+            $('.recipe-inner-container').next().remove();
+          }
+        },
       });
     });
   } else {

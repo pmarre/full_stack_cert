@@ -1,22 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+      href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      media="all"
+      rel="stylesheet"
+      id="font-awesome-5-kit-css"
+    />
+    <link
+      href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css"
+      media="all"
+      rel="stylesheet"
+      id="font-awesome-5-kit-css"
+    />
+
+    <link
+      href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      media="all"
+      rel="stylesheet"
+      id="font-awesome-5-kit-css"
+    />
+    <link href="./assets/style.css" rel="stylesheet" />
+    <!-- Load Jasmine Framework -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine.js"
+      integrity="sha256-PePX8Jc4TIxzzVz0Qe4NsH3OUU8+Y49DBWvYgggNqkY="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine-html.js"
+      integrity="sha256-qazAASTTgUrq9SOYkPSB3oEuqbhn+2j4kxGkVZ0GKjY="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/boot.js"
+      integrity="sha256-HG8TKl0T65NyELmbUoo0H7/a1e++smYdXXtuuEsyKok="
+      crossorigin="anonymous"
+    ></script> -->
+
+    <!-- Load jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>We've Been Throttled!</title>
   </head>
   <body>
-    <header class="throttled-header-container">
-      <h1>Well, this is awkward...</h1>
-      <p>
-        We have exceeded our daily quota for number of API requests. Please come
-        back tomorrow to continue your recipe search!
-      </p>
-      <p>
-        Tired of seeing this message? So are we! Click donate below to help us
-        increase our daily quota so you can search, uninterrupted, anytime!
-      </p>
-      <button class="btn donate-button">Donate now</button>
-    </header>
+    <section class="throttled-container">
+      <div class="throttled-content">
+        <h1>Well, this is awkward...</h1>
+        <p>
+          We have exceeded our daily quota for API requests. Please come back
+          tomorrow to continue your recipe search!
+        </p>
+        <p>
+          Tired of seeing this message? So are we! Click donate below to help us
+          increase our daily quota so you can search, uninterrupted, anytime!
+        </p>
+        <a class="btn donate-button" href="https://paypal.com" target="_blank"
+          >Donate now</a
+        >
+      </div>
+    </section>
   </body>
 </html>

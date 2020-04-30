@@ -43,7 +43,6 @@ const buildThumbnail = (response) => {
     </div>`;
 
     $('.recipe-inner-container').prepend(thumbnailElement);
-    console.log(savedRecipe, 'saved Recipe');
     if (savedRecipe.indexOf(recipe.id) !== -1) {
       $(`#heart-fill-${recipe.id}`).toggle();
       $(`#heart-outline-${recipe.id}`).toggle();
@@ -59,10 +58,13 @@ const buildThumbnail = (response) => {
 const showIngredients = (foodId) => {
   $('.recipe-card-list').css('display', 'none');
   $('.loading-container ').show();
-  $.when(
-    $.getJSON(
-      `https://api.spoonacular.com/recipes/${foodId}/information?apiKey=${RECIPE_API}`
-    ).then((response) => {
+  $.ajax({
+    url: `https://api.spoonacular.com/recipes/${foodId}/information`,
+    type: 'GET',
+    data: {
+      apiKey: RECIPE_API,
+    },
+    success: (response) => {
       let item;
       let img;
       console.log(response);
@@ -126,8 +128,19 @@ const showIngredients = (foodId) => {
         item = Object.values(ingredient.originalString).join('');
         $('.ingredient-list').append(`<li>${item}</li>`);
       });
-    })
-  );
+    },
+    error: function (xhr, status) {
+      if (typeof this.statusCode[xhr.status] != 'undefined') {
+        return false;
+      }
+      console.log(status);
+    },
+    statusCode: {
+      402: function (response) {
+        throttledApiRedirect();
+      },
+    },
+  });
 };
 
 $(document).ready(() => {
@@ -165,19 +178,35 @@ $(document).ready(() => {
       $('#showing-results-heading')
         .show()
         .text(`Showing results for '${searchTerm}':`);
-      $.when(
-        $.getJSON(
-          `https://api.spoonacular.com/recipes/search?apiKey=${RECIPE_API}&number=15&query=${searchTerm}`
-        )
-      ).then((response) => {
-        if (response.totalResults > 0) {
-          buildThumbnail(response);
-        } else {
-          $('#showing-results-heading')
-            .show()
-            .text(`Sorry, no results for '${searchTerm}'!`);
-          $('.recipe-card-list').css('display', 'none');
-        }
+      $.ajax({
+        url: `https://api.spoonacular.com/recipes/search`,
+        type: 'GET',
+        data: {
+          query: searchTerm,
+          number: 15,
+          apiKey: RECIPE_API,
+        },
+        success: (response) => {
+          if (response.totalResults > 0) {
+            buildThumbnail(response);
+          } else {
+            $('#showing-results-heading')
+              .show()
+              .text(`Sorry, no results for '${searchTerm}'!`);
+            $('.recipe-card-list').css('display', 'none');
+          }
+        },
+        error: function (xhr, status) {
+          if (typeof this.statusCode[xhr.status] != 'undefined') {
+            return false;
+          }
+          console.log(status);
+        },
+        statusCode: {
+          402: function (response) {
+            throttledApiRedirect();
+          },
+        },
       });
     }
   });
@@ -220,6 +249,17 @@ function getRandomRecipe() {
       success: (response) => {
         showIngredients(response.recipes[0].id);
       },
+      error: function (xhr, status) {
+        if (typeof this.statusCode[xhr.status] != 'undefined') {
+          return false;
+        }
+        console.log(status);
+      },
+      statusCode: {
+        402: function (response) {
+          throttledApiRedirect();
+        },
+      },
     });
   });
 }
@@ -234,6 +274,17 @@ function getRandomFact() {
     dataType: 'json',
     success: (response) => {
       $('.fact').prepend(response.text);
+    },
+    error: function (xhr, status) {
+      if (typeof this.statusCode[xhr.status] != 'undefined') {
+        return false;
+      }
+      console.log(status);
+    },
+    statusCode: {
+      402: function (response) {
+        throttledApiRedirect();
+      },
     },
   });
 }
@@ -251,6 +302,17 @@ function getNutritionInfo(id) {
       let protein = parseInt(response.protein.replace('g', ''));
       let carbs = parseInt(response.carbs.replace('g', ''));
       createChart(fat, protein, carbs);
+    },
+    error: function (xhr, status) {
+      if (typeof this.statusCode[xhr.status] != 'undefined') {
+        return false;
+      }
+      console.log(status);
+    },
+    statusCode: {
+      402: function (response) {
+        throttledApiRedirect();
+      },
     },
   });
 }
@@ -284,7 +346,22 @@ function getTrendingRecipes() {
         });
       });
     },
+    error: function (xhr, status) {
+      if (typeof this.statusCode[xhr.status] != 'undefined') {
+        return false;
+      }
+      console.log(status);
+    },
+    statusCode: {
+      402: function (response) {
+        throttledApiRedirect();
+      },
+    },
   });
+}
+
+function throttledApiRedirect() {
+  location.replace('./throttled.html');
 }
 
 // Add google charts
