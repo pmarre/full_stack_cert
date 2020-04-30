@@ -1,8 +1,8 @@
 'use strict';
 
 // API is throttled at 100 requests/day
-// const RECIPE_API = '822ac61ec94b4490b4e562e53eccb278';
-const RECIPE_API = 'fe4d98c4906948e2b62c8cde455bc054';
+const RECIPE_API = '822ac61ec94b4490b4e562e53eccb278';
+// const RECIPE_API = 'fe4d98c4906948e2b62c8cde455bc054';
 const backupImage = './assets/images/rush-8.png';
 
 // Build thumbnails
