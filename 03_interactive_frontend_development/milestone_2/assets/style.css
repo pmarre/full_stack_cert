@@ -952,6 +952,19 @@ footer {
   text-align: center;
 }
 
+.form-error,
+.form-success {
+  display: none;
+}
+
+.form-response {
+  display: block;
+}
+
+.form-error {
+  color: #ff2f2f;
+}
+
 .submit-recipe-form input,
 .submit-recipe-form textarea {
   margin: 10px 0;
@@ -984,6 +997,7 @@ footer {
   background-color: rgb(236, 0, 0);
   color: #fff;
   max-width: 250px;
+  align-self: center;
 }
 
 .form-buttons-container {
@@ -1334,6 +1348,7 @@ footer {
     margin-left: 20px;
     padding: 10px 20px;
     transition: none;
+    align-self: flex-start;
   }
 
   .form-img {

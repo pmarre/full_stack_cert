@@ -1,4 +1,4 @@
-('use strict');
+'use strict';
 $(document).ready(() => {
   $('.recipe-card-list').prepend(
     `<div class="recipe-inner-container" id="saved-container"></div>`
@@ -13,21 +13,9 @@ $(document).ready(() => {
         },
         success: (response) => {
           // buildThumbnail(response);
-          let thumbnailElement = `
-        <div class="recipe-card">
-            <div class="img" style="background-image: url('${response.image}')">
-                <div class="save-btn-container">
-                    <i class="far fa-heart heart-btn heart-btn-outline" id="heart-outline-${response.id}" style="display: block;" onclick="toggleLikeBtn(${response.id})"></i>
-                    <i class="fas fa-heart heart-btn heart-btn-fill" style="display: none;" id="heart-fill-${response.id}" onclick="toggleLikeBtn(${response.id})"></i>
-                </div>
-            </div>
-            <div class="recipe-details">
-              <a class="recipe-card-view-recipe" href="#top-recipes" onclick="showIngredients(${response.id})">${response.title}</a>
-            </div>
-            </div>
-        </div>`;
-
-          $('#saved-container').prepend(thumbnailElement);
+          $('#saved-container').prepend(
+            buildRecipeCard(response.image, response.id, response.title)
+          );
           if (localStorage.getItem(response.id) !== null) {
             $(`#heart-fill-${response.id}`).toggle();
             $(`#heart-outline-${response.id}`).toggle();
