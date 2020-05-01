@@ -35,7 +35,7 @@ Quarantini can be accessed here: [Live Site](https://pmarre.github.io/full_stack
 <details>
 <summary>Recipe Search</summary>
 <br>
-![Image of recipe search](https://github.com/pmarre/full_stack_cert/03_interactive_frontend_development/milestone_2/assets/images/readme-images/recipe-search.png)
+![Image of recipe search](https://github.com/pmarre/full_stack_cert/blob/creating-read-me/03_interactive_frontend_development/milestone_2/assets/images/readme-images/recipe-search.png)
 </details>
   - If blank, user receives error
   - Recieve top 15 results
