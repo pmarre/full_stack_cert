@@ -4,6 +4,19 @@ Quarantini can be accessed here: [Live Site](https://pmarre.github.io/full_stack
 
 ## TABLE OF CONTENTS
 
+1. [UX](https://github.com/pmarre/full_stack_cert/tree/master/03_interactive_frontend_development/milestone_2#UX)
+   - [User Stories](<(https://github.com/pmarre/full_stack_cert/tree/master/03_interactive_frontend_development/milestone_2#User_Stories)>)
+   - [Strategy]()
+   - [Scope]()
+   - [Structure]()
+   - [Surface]()
+   - [Wireframes]()
+2. [Features]()
+   - [More Key Features]()
+3. [Technologies Used]()
+4. [Testing]()
+5. [Deployment]()
+
 ## UX
 
 - The goal of the site is to develop a responsive website where users can quickly find recipes for their favorite foods, view their saved recipes, and learn about the nutrition of various recipes.
@@ -31,25 +44,26 @@ Quarantini can be accessed here: [Live Site](https://pmarre.github.io/full_stack
 
 ### Features
 
-- Search for a recipe
-<details>
-<summary>Recipe Search</summary>
-<br>
-![alt text](https://github.com/pmarre/full_stack_cert/03_interactive_frontend_development/milestone_2/assets/images/readme-images/recipe-search.png "Image of recipe search")
-</details>
-  - If blank, user receives error
-  - Recieve top 15 results
-    - Recipe cards include Image, Title, Cook Time, Like Button, and See Recipe Button
-- Full Recipe
-  - Shows full recipe instructions, ingriedents, summary, image, nutrition, serving size, and cook time
-  - Nutrition uses [Google Charts](https://developers.google.com/chart) to display Fat, Carbs, and Protein in a Donut chart
-- Click for a random recipe
-- Trending Recipes
-  - API does not offer a trending recipe call, so I used random recipes to get a similar effect
-- Fun Facts
-  - Uses Spoonacular's Food Trivia to call a new fun fact for the user on each refresh
-- Saved Recipes
-  - Recipes the user has liked are stored with Local Storage and presented on the Saved Recipes page
+This project is built with HTML, CSS, Javascript, and jQuery in conjuction with the [Spoonacular API](https://spoonacular.com/food-api) to built a recipe database. I chose to avoid using a style library like Bootstrap or Semantic UI and built this project from scratch. The majority of the site is styled using CSS3's Flexbox to make responsive elements so the project renders as expected on various devices.
+
+Javascript and jQuery were used to add functionality to the project. Using jQuery's `.ajax()` method, I am able to quickly make calls to the API, return data, and check for errors.
+
+#### More key features:
+
+1. Recipe search functionality
+   - Recieves top 15 results from the API and presents them in an organized and informative manor so the user can quickly view each recipe
+   - If the search bar is left blank, user receives error when they try to submit
+2. Full Recipe Card
+   - Shows full recipe instructions, ingriedents, summary, image, nutrition, serving size, and cook time
+   - Nutrition uses [Google Charts](https://developers.google.com/chart) to display Fat, Carbs, and Protein in a donut chart
+3. Random Recipe Generator
+   - Option to generate a random recipe to view
+4. Trending Recipes
+   - Right away, users are able to see three popular recipes when they land on the site
+5. Fun Facts
+   - On the homepage, users can see fun food facts that are pullded from Spoonacular's Food Trivia call
+6. Saved Recipes
+   - Recipes the user has "liked" are stored with Local Storage and presented on the Saved Recipes page
 
 ## Technologies Used
 
@@ -65,22 +79,38 @@ Quarantini can be accessed here: [Live Site](https://pmarre.github.io/full_stack
 
 ## Testing
 
-- HTML
-- CSS
-- Jasmine
-- Manual Testing:
-  - Found Bugs/Errors:
-    1. Incorrect use of localStorage produced results that worked in development, but failed in the live site
-    - Used a single key/value pair in the localStorage
-      - Value was equal to empty array, as users saved/unsaved recipes I used shift/unshift to add/remove them from the array
-    - Fixed by creating a single key/value pair for every item that was liked using the recipe id as the key and value for easy access
-    2. 402 error from Spoonacular API
-    - 402 error is throttling that Spoonacular puts on their API to limit the number of requests per day with the option to pay for more requests
-      - Used `location.replace(/throttle.html)`, to redirect user to a new page stating the error
+#### HTML
+
+    - Used W3C HTML validator to validate all HTML pages
+
+#### CSS
+
+    - Used W3C CSS validator to validate all CSS files
+
+#### Manual Testing:
+
+##### Found Bugs/Errors:
+
+1. Incorrect use of localStorage produced results that worked in development, but failed in the live site
+   - Used a single key/value pair in the localStorage
+   - Value was equal to empty array, as users saved/unsaved recipes I used shift/unshift to add/remove them from the array
+   - Fixed by creating a single key/value pair for every item that was liked using the recipe id as the key and value for easy access
+2. 402 error from Spoonacular API
+   - 402 error is throttling that Spoonacular puts on their API to limit the number of requests per day with the option to pay for more requests
+   - Used `location.replace(/throttle.html)`, to redirect user to a new page stating the error
 
 ## Edgecases
 
-- Backup image if no image exists
-- No results
-- Throttle API
-- Error Messages
+There were a few edgecases that need to be considered for this project to protect the user experience. Because the user has full control over what they search for I needed to answer a few questions:
+
+_Q: What if the recipe has no image?_
+
+A: This came up in development a few times, I ended up finding an SVG online and used it as a backup image. Before any dynamic elements are added to the page, I check for an image. If no image exists, I add in my backup image.
+
+_Q: What if there are no results?_
+
+A: While no results is unlikely given the breadth of Spoonacular's API, it is still possible. For example what if someone enters "afdsfafac"? That is not a real word or food item and the API will respond with an empty object. If that is the case, the user will see the response: "Sorry, no results for 'afdsfafac'!"
+
+_Q: Spoonacular's API has a pay wall. What happens if the daily limit is hit?_
+
+A: Because I used the free version of the API, the site is limited to 100 requests per day. If a user happens to do the 101st search of the day, the API responds with a 402 error and the user gets redirected to a new landing page telling them what the issue is, to return tomorrow, and if they are tired of the pay wall, to donate to the site.
