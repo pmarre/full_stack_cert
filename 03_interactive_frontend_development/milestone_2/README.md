@@ -5,17 +5,18 @@ Quarantini can be accessed here: [Live Site](https://pmarre.github.io/full_stack
 ## TABLE OF CONTENTS
 
 1. [UX](https://github.com/pmarre/full_stack_cert/tree/master/03_interactive_frontend_development/milestone_2#UX)
-   - [User Stories](<(https://github.com/pmarre/full_stack_cert/tree/master/03_interactive_frontend_development/milestone_2#User_Stories)>)
-   - [Strategy]()
-   - [Scope]()
-   - [Structure]()
-   - [Surface]()
-   - [Wireframes]()
-2. [Features]()
-   - [More Key Features]()
-3. [Technologies Used]()
-4. [Testing]()
-5. [Deployment]()
+   - [User Stories](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#user-stories)
+   - [Strategy](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#strategy)
+   - [Scope](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#scope)
+   - [Structure](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#structure)
+   - [Surface](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#strategy)
+   - [Wireframes](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#wireframes)
+2. [Features](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#features)
+   - [More Key Features](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#more-key-features)
+3. [Technologies Used](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#technologies-used)
+4. [Testing](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#testing)
+5. [Edgecases](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#edgecases)
+6. [Deployment]()
 
 ## UX
 
@@ -42,7 +43,7 @@ Quarantini can be accessed here: [Live Site](https://pmarre.github.io/full_stack
 
 ### Wireframes
 
-### Features
+## Features
 
 This project is built with HTML, CSS, Javascript, and jQuery in conjuction with the [Spoonacular API](https://spoonacular.com/food-api) to built a recipe database. I chose to avoid using a style library like Bootstrap or Semantic UI and built this project from scratch. The majority of the site is styled using CSS3's Flexbox to make responsive elements so the project renders as expected on various devices.
 
@@ -81,11 +82,11 @@ Javascript and jQuery were used to add functionality to the project. Using jQuer
 
 #### HTML
 
-    - Used W3C HTML validator to validate all HTML pages
+- Used W3C HTML validator to validate all HTML pages
 
 #### CSS
 
-    - Used W3C CSS validator to validate all CSS files
+- Used W3C CSS validator to validate all CSS files
 
 #### Manual Testing:
 
