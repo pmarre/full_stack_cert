@@ -32,6 +32,11 @@ Quarantini can be accessed here: [Live Site](https://pmarre.github.io/full_stack
 ### Features
 
 - Search for a recipe
+<details>
+<summary>Recipe Search</summary>
+<br>
+![Image of recipe search](assets/images/readme-images/recipe-search.png)
+</details>
   - If blank, user receives error
   - Recieve top 15 results
     - Recipe cards include Image, Title, Cook Time, Like Button, and See Recipe Button
