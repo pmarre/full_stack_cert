@@ -43,6 +43,12 @@ Scratch can be accessed here: [Live Site](https://pmarre.github.io/full_stack_ce
 
 ### Wireframes
 
+<details>
+<summary>Desktop Homepage Wireframe</summary>
+<br />
+![Desktop homepage wireframe](/assets/images/readme-images/hp-wireframes.png)
+</details>
+
 ## Features
 
 This project is built with HTML, CSS, Javascript, and jQuery in conjuction with the [Spoonacular API](https://spoonacular.com/food-api) to built a recipe database. I chose to avoid using a style library like Bootstrap or Semantic UI and built this project from scratch. The majority of the site is styled using CSS3's Flexbox to make responsive elements so the project renders as expected on various devices.
