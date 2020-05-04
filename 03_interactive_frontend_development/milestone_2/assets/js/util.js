@@ -306,7 +306,7 @@ function getTrendingRecipes() {
 // Redirect user to new page when 402 error occurs
 function throttledApiRedirect() {
   location.replace(
-    'full_stack_cert/03_interactive_frontend_development/milestone_2//throttled.html'
+    'full_stack_cert/03_interactive_frontend_development/milestone_2/throttled.html'
   );
 }
 
