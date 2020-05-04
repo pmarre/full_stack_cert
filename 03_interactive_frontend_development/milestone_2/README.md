@@ -46,9 +46,35 @@ Scratch can be accessed here: [Live Site](https://pmarre.github.io/full_stack_ce
 <details>
 <summary>Desktop Homepage Wireframe</summary>
 <br />
-![Desktop homepage wireframe](/assets/images/readme-images/hp-wireframes.png)
+   <img alt="Description" src="https://github.com/pmarre/full_stack_cert/blob/master/03_interactive_frontend_development/milestone_2/assets/images/readme-images/hp-wireframe.png">
 </details>
-![Desktop homepage wireframe](/assets/images/readme-images/hp-wireframes.png)
+<details>
+<summary>Desktop Saved Recipes Page Wireframe</summary>
+<br />
+   <img alt="Description" src="https://github.com/pmarre/full_stack_cert/blob/master/03_interactive_frontend_development/milestone_2/assets/images/readme-images/hp-wireframe.png">
+</details>
+<details>
+<summary>Desktop Submit Recipe Page Wireframe</summary>
+<br />
+   <img alt="Description" src="https://github.com/pmarre/full_stack_cert/blob/master/03_interactive_frontend_development/milestone_2/assets/images/readme-images/hp-wireframe.png">
+</details>
+<details>
+<summary>Mobile Homepage Wireframe</summary>
+<br />
+   <img alt="Description" src="https://github.com/pmarre/full_stack_cert/blob/master/03_interactive_frontend_development/milestone_2/assets/images/readme-images/hp-wireframe.png">
+</details>
+<details>
+<summary>Mobile Saved Recipes Page Wireframe</summary>
+<br />
+   <img alt="Description" src="https://github.com/pmarre/full_stack_cert/blob/master/03_interactive_frontend_development/milestone_2/assets/images/readme-images/hp-wireframe.png">
+</details>
+<details>
+<summary>Mobile Submit Recipe Page Wireframe</summary>
+<br />
+   <img alt="Description" src="https://github.com/pmarre/full_stack_cert/blob/master/03_interactive_frontend_development/milestone_2/assets/images/readme-images/hp-wireframe.png">
+</details>
+
+
 ## Features
 
 This project is built with HTML, CSS, Javascript, and jQuery in conjuction with the [Spoonacular API](https://spoonacular.com/food-api) to built a recipe database. I chose to avoid using a style library like Bootstrap or Semantic UI and built this project from scratch. The majority of the site is styled using CSS3's Flexbox to make responsive elements so the project renders as expected on various devices.
