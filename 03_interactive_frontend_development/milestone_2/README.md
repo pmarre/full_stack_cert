@@ -1,6 +1,6 @@
-# QUARANTINI - Search over 350,000 recipes
+# Scratch - Search over 350,000 recipes
 
-Quarantini can be accessed here: [Live Site](https://pmarre.github.io/full_stack_cert/03_interactive_frontend_development/milestone_2/index.html)
+Scratch can be accessed here: [Live Site](https://pmarre.github.io/full_stack_cert/03_interactive_frontend_development/milestone_2/index.html)
 
 ## TABLE OF CONTENTS
 
