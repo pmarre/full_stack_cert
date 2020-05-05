@@ -35,7 +35,15 @@ Scratch can be accessed here: [Live Site](https://pmarre.github.io/full_stack_ce
 
 ### Strategy
 
+While deciding on a design for this project, I first needed to establish a target audience. Since cooking is done by nearly everyone, the target audience could range from a professional chef to the absolute beginner learning how to boil water. I decided that, while professional chefs could use my site successfully, they weren't my target audience. And the same goes for the absolute beginner. My target audience is the at home cook. Someone who has an understanding of their capabilities as a cook and is beginning to experiment with new recipes.
+
+With the target audience being fairly broad, I needed a design that was intuitive to use, but offered more modern functionality like a "like" button to save favorite recipes. I also chose nice, bright colors to connect emotionally with people and provide a positive experience while searching for a recipe.
+
 ### Scope
+
+The next problem I had to solve before diving into the design of the project was what does my target audience need? They don't need a recipe database, they need a recipe. They need something that looks appealing for them to cook. Users don't come to the site to look at a recipe database, they come to the site with the intent to find the recipe they are longing for.
+
+So the next step was figuring out how to connect the user with the specific recipe they are looking for.
 
 ### Structure
 
@@ -74,7 +82,6 @@ Scratch can be accessed here: [Live Site](https://pmarre.github.io/full_stack_ce
    <img alt="Description" src="https://github.com/pmarre/full_stack_cert/blob/master/03_interactive_frontend_development/milestone_2/assets/images/readme-images/hp-wireframe.png">
 </details>
 
-
 ## Features
 
 This project is built with HTML, CSS, Javascript, and jQuery in conjuction with the [Spoonacular API](https://spoonacular.com/food-api) to built a recipe database. I chose to avoid using a style library like Bootstrap or Semantic UI and built this project from scratch. The majority of the site is styled using CSS3's Flexbox to make responsive elements so the project renders as expected on various devices.
@@ -98,6 +105,8 @@ Javascript and jQuery were used to add functionality to the project. Using jQuer
 6. Saved Recipes
    - Recipes the user has "liked" are stored with Local Storage and presented on the Saved Recipes page
 
+## Future Features
+
 ## Technologies Used
 
 - HTML5
@@ -114,11 +123,11 @@ Javascript and jQuery were used to add functionality to the project. Using jQuer
 
 #### HTML
 
-- Used W3C HTML validator to validate all HTML pages
+- Used W3C HTML validator to validate all HTML pages - No warnings or errors
 
 #### CSS
 
-- Used W3C CSS validator to validate all CSS files
+- Used W3C CSS validator to validate all CSS files - No warnings or errors
 
 #### Manual Testing:
 
@@ -131,6 +140,11 @@ Javascript and jQuery were used to add functionality to the project. Using jQuer
 2. 402 error from Spoonacular API
    - 402 error is throttling that Spoonacular puts on their API to limit the number of requests per day with the option to pay for more requests
    - Used `location.replace(/throttle.html)`, to redirect user to a new page stating the error
+3. Peer review in Code Institute Slack Channel
+   - Used the peer review Slack channel to have student/alumni/mentors review the site and give feedback and look for bugs
+   - There were two errors/issues that were brought up in the peer review:
+     1. Site was giving a 404 (page not found) error when API quota was reached - this was due to a syntax error in my redirect
+     2. While having no effect on the functionality of the site, by having my project share a repo with all of my course work, readability and repo navigation has become a bit of an issue. At this time, I am leaving the site in place, but moving forward each project will be in its own repository.
 
 ## Edgecases
 
@@ -147,3 +161,5 @@ A: While no results is unlikely given the breadth of Spoonacular's API, it is st
 _Q: Spoonacular's API has a pay wall. What happens if the daily limit is hit?_
 
 A: Because I used the free version of the API, the site is limited to 100 requests per day. If a user happens to do the 101st search of the day, the API responds with a 402 error and the user gets redirected to a new landing page telling them what the issue is, to return tomorrow, and if they are tired of the pay wall, to donate to the site.
+
+## Deployment
