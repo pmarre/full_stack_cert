@@ -305,7 +305,7 @@ function getTrendingRecipes() {
 
 // Redirect user to new page when 402 error occurs
 function throttledApiRedirect() {
-  location.replace('/throttled.html');
+  location.replace('throttled.html');
 }
 
 // Build Google chart with recipe nutrition information
